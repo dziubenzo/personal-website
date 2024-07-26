@@ -1,22 +1,28 @@
-import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
 import Theme from './Theme';
 import GlobalStyle from '../styles/GlobalStyle';
 
-type AppProps = {
-  children?: React.ReactNode;
-};
+import { IntlProvider } from 'react-intl';
+import { LOCALES } from '../languages/locales';
+import { messages } from '../languages/messages';
+import { useState } from 'react';
 
-export default function App({ children }: AppProps) {
+export default function App() {
+  const [locale, setLocale] = useState(LOCALES.BRITISH_ENGLISH);
+
   return (
-    <Theme>
-      <GlobalStyle />
-      <Header />
-      <Outlet />
-      {children}
-      <Footer />
-    </Theme>
+    <IntlProvider
+      defaultLocale={LOCALES.BRITISH_ENGLISH}
+      locale={locale}
+      messages={messages[locale]}
+    >
+      <Theme>
+        <GlobalStyle />
+        <Header />
+        <Footer />
+      </Theme>
+    </IntlProvider>
   );
 }

@@ -1,3 +1,9 @@
+import { FormattedMessage } from 'react-intl';
+
 export default function Header() {
-  return <div>Header</div>;
+  return (
+    <p>
+      <FormattedMessage id="test" />
+    </p>
+  );
 }
