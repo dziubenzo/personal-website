@@ -2,18 +2,30 @@ import { LOCALES, LocalesValues } from './locales';
 
 type Languages = Record<LocalesValues, Language>;
 
-type Language = {
-  test: string;
+type Language = typeof defaultLanguage;
+
+const defaultLanguage = {
+  headerAbout: 'About',
+  headerSkills: 'Skills',
+  headerProjects: 'Projects',
+  headerCV: 'CV',
+  headerContactForm: 'Contact Form',
 };
 
 export const messages: Languages = {
-  [LOCALES.BRITISH_ENGLISH]: {
-    test: 'Hi guys!',
-  },
+  [LOCALES.BRITISH_ENGLISH]: defaultLanguage,
   [LOCALES.AMERICAN_ENGLISH]: {
-    test: 'Hi folks!',
+    headerAbout: 'About',
+    headerSkills: 'Skills',
+    headerProjects: 'Projects',
+    headerCV: 'Resume',
+    headerContactForm: 'Contact Form',
   },
   [LOCALES.POLISH]: {
-    test: 'Cześć ludzie!',
+    headerAbout: 'O mnie',
+    headerSkills: 'Umiejętności',
+    headerProjects: 'Projekty',
+    headerCV: 'CV',
+    headerContactForm: 'Formularz kontaktowy',
   },
 };
