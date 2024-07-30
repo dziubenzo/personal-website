@@ -1,11 +1,14 @@
 import { ThemeProvider } from 'styled-components';
 
+// Make autocomplete work when used in styled components
+export type ThemeObject = typeof darkTheme;
+
 const darkTheme = {
   colours: {
-    background: '#0C0C0C',
-    primary: '#F2613F',
-    secondary: '#9B3922',
-    tertiary: '#481E14',
+    background: '#27374D',
+    primary: '#DDE6ED',
+    secondary: '#9DB2BF',
+    tertiary: '#526D82',
   },
   fontSizes: {
     small: '0.8rem',
@@ -15,10 +18,13 @@ const darkTheme = {
     extraLarge: '2rem',
   },
   fonts: {
-    primary: '',
-    secondary: '',
+    primary: '"Ubuntu", sans-serif',
+    secondary: '"Poppins", sans-serif',
+    tertiary: '"Bebas Neue", sans-serif',
   },
   mobile: '768px',
+  tabletMin: '769px',
+  tabletMax: '1024px',
 };
 
 type ThemeProps = {

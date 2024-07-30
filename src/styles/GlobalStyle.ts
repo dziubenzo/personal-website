@@ -7,6 +7,30 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     background-color: ${(props) => props.theme.colours.background};
     color: ${(props) => props.theme.colours.primary};
+    font-family: ${(props) => props.theme.fonts.primary};
+    font-style: normal;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #root {
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    place-items: center;
+    min-height: 100lvh;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  header,
+  main,
+  footer {
+    height: 100%;
+    width: inherit;
+    padding: 1em;
   }
 `;
 
