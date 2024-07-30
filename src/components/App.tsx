@@ -10,7 +10,7 @@ import { messages } from '../languages/messages';
 import { useState } from 'react';
 
 export default function App() {
-  const [locale, setLocale] = useState(LOCALES.BRITISH_ENGLISH);
+  const [locale, setLocale] = useState(LOCALES.POLISH);
 
   return (
     <IntlProvider
@@ -21,6 +21,7 @@ export default function App() {
       <Theme>
         <GlobalStyle />
         <Header />
+        <main>Placeholder</main>
         <Footer />
       </Theme>
     </IntlProvider>

@@ -23,8 +23,7 @@ const darkTheme = {
     tertiary: '"Bebas Neue", sans-serif',
   },
   mobile: '768px',
-  tabletMin: '769px',
-  tabletMax: '1024px',
+  tablet: '1024px',
 };
 
 type ThemeProps = {

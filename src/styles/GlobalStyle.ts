@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  *:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colours.secondary}
+  }
+
   body {
     display: flex;
     justify-content: center;
