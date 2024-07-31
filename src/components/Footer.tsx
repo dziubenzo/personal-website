@@ -14,6 +14,7 @@ function LanguagePicker({ locale, setLocale }: FooterProps) {
   function changeLanguage(newLocale: LocalesValues) {
     if (newLocale === locale) return;
     setLocale(newLocale);
+    localStorage.setItem('lang', newLocale);
     const htmlElement = document.querySelector<HTMLHtmlElement>('html');
     if (htmlElement) {
       htmlElement.lang = newLocale;

@@ -8,9 +8,11 @@ import { IntlProvider } from 'react-intl';
 import { LOCALES, LocalesValues } from '../languages/locales';
 import { messages } from '../languages/messages';
 import { useState } from 'react';
+import { getPreferredLang } from '../utils/helpers';
 
 export default function App() {
-  const [locale, setLocale] = useState<LocalesValues>(LOCALES.POLISH);
+  const preferredLang = getPreferredLang();
+  const [locale, setLocale] = useState<LocalesValues>(preferredLang);
 
   return (
     <IntlProvider
