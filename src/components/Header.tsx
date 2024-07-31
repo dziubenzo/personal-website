@@ -1,4 +1,5 @@
 import { StyledHeader, StyledNavBar } from '../styles/Header.styled';
+import { StyledIconButton } from '../styles/App.styled';
 import { FormattedMessage } from 'react-intl';
 import { useCheckViewportWidth, useOutsideTap } from '../utils/hooks';
 import { MdMenu } from 'react-icons/md';
@@ -55,6 +56,7 @@ function NavBar({ showSidebar, setShowSidebar }: NavBarProps) {
 
 export default function Header() {
   const isMobile = useCheckViewportWidth();
+
   const [showSidebar, setShowSidebar] = useState(false);
 
   if (isMobile) {
@@ -64,7 +66,12 @@ export default function Header() {
           <h1>Michał Dziubany</h1>
           <h3>Fullstack Developer</h3>
         </div>
-        <MdMenu onClick={() => setShowSidebar(!showSidebar)} />
+        <StyledIconButton
+          $size={32}
+          onClick={() => setShowSidebar(!showSidebar)}
+        >
+          <MdMenu />
+        </StyledIconButton>
         <NavBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       </StyledHeader>
     );
