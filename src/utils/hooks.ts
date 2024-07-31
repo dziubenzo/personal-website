@@ -8,7 +8,7 @@ export const useCheckViewportWidth = () => {
 
   useLayoutEffect(() => {
     const checkViewportWidth = () => {
-      if (window.innerWidth <= parseInt(theme.mobile)) {
+      if (window.innerWidth < parseInt(theme.mobile)) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -36,7 +36,8 @@ export const useOutsideTap = (
       if (
         sidebarRef.current &&
         setShowSidebar &&
-        !sidebarRef.current.contains(event.target as Node)
+        !sidebarRef.current.contains(event.target as Node) &&
+        !(event.target instanceof SVGElement) // Make sure menu icon button works
       ) {
         return setShowSidebar(false);
       }
