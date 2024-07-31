@@ -1,12 +1,27 @@
 import { StyledHeader, StyledNavBar } from '../styles/Header.styled';
 import { FormattedMessage } from 'react-intl';
-import { useCheckViewportWidth } from '../utils/hooks';
+import { useCheckViewportWidth, useOutsideTap } from '../utils/hooks';
 import { MdMenu } from 'react-icons/md';
 import { useState } from 'react';
 
-function NavBar() {
+type NavBarProps = {
+  showSidebar?: boolean;
+  setShowSidebar?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function NavBar({ showSidebar, setShowSidebar }: NavBarProps) {
+  const handleNavBarClasses = () => {
+    return showSidebar === undefined
+      ? undefined
+      : showSidebar
+        ? 'slide-in'
+        : 'slide-out';
+  };
+
+  const sidebarRef = useOutsideTap(setShowSidebar);
+
   return (
-    <StyledNavBar>
+    <StyledNavBar ref={sidebarRef} className={handleNavBarClasses()}>
       <ul>
         <li>
           <a href="#about">
@@ -50,7 +65,7 @@ export default function Header() {
           <h3>Fullstack Developer</h3>
         </div>
         <MdMenu onClick={() => setShowSidebar(!showSidebar)} />
-        {showSidebar && <NavBar />}
+        <NavBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
       </StyledHeader>
     );
   }

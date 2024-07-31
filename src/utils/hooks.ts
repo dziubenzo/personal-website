@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
 
 // Render two different Header components depending on viewport width
@@ -23,4 +23,29 @@ export const useCheckViewportWidth = () => {
   }, [window.innerWidth]);
 
   return isMobile;
+};
+
+// Close the sidebar on tap outside the sidebar
+export const useOutsideTap = (
+  setShowSidebar?: React.Dispatch<React.SetStateAction<boolean>>,
+) => {
+  const sidebarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    function closeSidebar(event: MouseEvent) {
+      if (
+        sidebarRef.current &&
+        setShowSidebar &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        return setShowSidebar(false);
+      }
+    }
+    document.addEventListener('mousedown', closeSidebar);
+    return () => {
+      document.removeEventListener('mousedown', closeSidebar);
+    };
+  }, []);
+
+  return sidebarRef;
 };
