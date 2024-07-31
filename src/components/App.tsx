@@ -5,12 +5,12 @@ import Theme from './Theme';
 import GlobalStyle from '../styles/GlobalStyle';
 
 import { IntlProvider } from 'react-intl';
-import { LOCALES } from '../languages/locales';
+import { LOCALES, LocalesValues } from '../languages/locales';
 import { messages } from '../languages/messages';
 import { useState } from 'react';
 
 export default function App() {
-  const [locale, setLocale] = useState(LOCALES.POLISH);
+  const [locale, setLocale] = useState<LocalesValues>(LOCALES.POLISH);
 
   return (
     <IntlProvider
@@ -22,7 +22,7 @@ export default function App() {
         <GlobalStyle />
         <Header />
         <main>Placeholder</main>
-        <Footer />
+        <Footer locale={locale} setLocale={setLocale} />
       </Theme>
     </IntlProvider>
   );
