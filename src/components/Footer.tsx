@@ -65,7 +65,7 @@ function ThemePicker({ theme, setTheme }: ThemePickerProps) {
   const intl = useIntl();
 
   function changeTheme(newTheme: ThemeObject) {
-    if (theme === newTheme) return;
+    if (theme.type === newTheme.type) return;
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme.type);
   }

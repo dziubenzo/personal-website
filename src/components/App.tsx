@@ -8,14 +8,15 @@ import { IntlProvider } from 'react-intl';
 import { LOCALES, LocalesValues } from '../languages/locales';
 import { messages } from '../languages/messages';
 import { useState } from 'react';
-import { getPreferredLang } from '../utils/helpers';
-import { darkTheme, ThemeObject } from '../utils/themes';
+import { getPreferredLang, getPreferredTheme } from '../utils/helpers';
+import { ThemeObject } from '../utils/themes';
 
 export default function App() {
   const preferredLang = getPreferredLang();
+  const preferredTheme = getPreferredTheme();
 
   const [locale, setLocale] = useState<LocalesValues>(preferredLang);
-  const [theme, setTheme] = useState<ThemeObject>(darkTheme);
+  const [theme, setTheme] = useState<ThemeObject>(preferredTheme);
 
   return (
     <IntlProvider
