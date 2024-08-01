@@ -1,7 +1,13 @@
 import { FormattedMessage, useIntl } from 'react-intl';
-import { StyledFooter, StyledLanguagePicker } from '../styles/Footer.styled';
+import {
+  StyledFooter,
+  StyledLanguagePicker,
+  StyledThemePicker,
+} from '../styles/Footer.styled';
 import { getTranslation } from '../utils/helpers';
 import { LocalesValues } from '../languages/locales';
+import { MdLightMode, MdDarkMode } from 'react-icons/md';
+import { StyledIconButton } from '../styles/App.styled';
 
 type FooterProps = {
   locale: LocalesValues;
@@ -48,6 +54,24 @@ function LanguagePicker({ locale, setLocale }: FooterProps) {
   );
 }
 
+function ThemePicker() {
+  const intl = useIntl();
+
+  return (
+    <StyledThemePicker>
+      <h3>
+        <FormattedMessage id="footerTheme" />
+      </h3>
+      <StyledIconButton $size={32} title={getTranslation(intl, 'footerLight')}>
+        <MdLightMode />
+      </StyledIconButton>
+      <StyledIconButton $size={32} title={getTranslation(intl, 'footerDark')}>
+        <MdDarkMode />
+      </StyledIconButton>
+    </StyledThemePicker>
+  );
+}
+
 export default function Footer({ locale, setLocale }: FooterProps) {
   return (
     <StyledFooter>
@@ -55,6 +79,7 @@ export default function Footer({ locale, setLocale }: FooterProps) {
       <div className="copyright">
         <p>© {new Date().getFullYear()} Michał Dziubany</p>
       </div>
+      <ThemePicker />
     </StyledFooter>
   );
 }

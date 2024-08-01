@@ -16,6 +16,9 @@ const defaultLanguage = {
   footerPL: 'Polish',
   footerBrE: 'British English',
   footerAmE: 'American English',
+  footerTheme: 'Theme',
+  footerLight: 'Light',
+  footerDark: 'Dark',
 };
 
 export const messages: Languages = {
@@ -30,6 +33,9 @@ export const messages: Languages = {
     footerPL: 'Polish',
     footerBrE: 'British English',
     footerAmE: 'American English',
+    footerTheme: 'Theme',
+    footerLight: 'Light',
+    footerDark: 'Dark',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -41,5 +47,8 @@ export const messages: Languages = {
     footerPL: 'polski',
     footerBrE: 'angielski (odmiana brytyjska)',
     footerAmE: 'angielski (odmiana amerykańska)',
+    footerTheme: 'Kolorystyka',
+    footerLight: 'Jasna',
+    footerDark: 'Ciemna',
   },
 };
