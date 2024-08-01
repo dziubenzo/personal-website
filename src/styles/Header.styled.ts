@@ -16,16 +16,16 @@ export const StyledHeader = styled.header`
     }
   }
 
-  @media (width < ${(props) => props.theme.mobile}) {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
   @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
       props.theme.tablet}) {
     flex-direction: column;
     gap: 16px;
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 `;
 
@@ -53,11 +53,28 @@ export const StyledNavBar = styled.nav`
       li {
         a {
           border-radius: 8px;
-          transition: background-color 0.15s ease-in-out;
 
           &:hover {
+            transition: background-color 0.15s ease-in-out;
             background-color: ${(props) => props.theme.colours.tertiary};
           }
+        }
+      }
+    }
+  }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    margin-left: revert;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      place-items: center;
+
+      li {
+        a {
+          padding: revert;
         }
       }
     }
@@ -107,23 +124,6 @@ export const StyledNavBar = styled.nav`
           text-underline-offset: 0.3em;
           font-size: ${(props) => props.theme.fontSizes.small};
           width: 80%;
-        }
-      }
-    }
-  }
-
-  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
-      props.theme.tablet}) {
-    margin-left: revert;
-
-    ul {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      place-items: center;
-
-      li {
-        a {
-          padding: revert;
         }
       }
     }
