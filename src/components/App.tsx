@@ -1,13 +1,15 @@
+import About from './About';
 import Footer from './Footer';
 import Header from './Header';
 
-import Theme from './Theme';
+import { StyledMainContainer } from '../styles/App.styled';
 import GlobalStyle from '../styles/GlobalStyle';
+import Theme from './Theme';
 
+import { useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { LOCALES, LocalesValues } from '../languages/locales';
 import { messages } from '../languages/messages';
-import { useState } from 'react';
 import { getPreferredLang, getPreferredTheme } from '../utils/helpers';
 import { ThemeObject } from '../utils/themes';
 
@@ -27,7 +29,9 @@ export default function App() {
       <Theme theme={theme}>
         <GlobalStyle />
         <Header />
-        <main>Placeholder</main>
+        <StyledMainContainer>
+          <About />
+        </StyledMainContainer>
         <Footer
           locale={locale}
           setLocale={setLocale}

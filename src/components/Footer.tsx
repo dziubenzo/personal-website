@@ -88,7 +88,7 @@ function ThemePicker({ theme, setTheme }: ThemePickerProps) {
             title={getTranslation(intl, 'footerLight')}
             onClick={() => changeTheme(lightThemeCandidate2)}
           >
-            <MdLightMode />
+            <MdLightMode aria-hidden={true} />
           </StyledIconButton>
         )}
         {theme.type !== darkTheme.type && (
@@ -97,7 +97,7 @@ function ThemePicker({ theme, setTheme }: ThemePickerProps) {
             title={getTranslation(intl, 'footerDark')}
             onClick={() => changeTheme(darkTheme)}
           >
-            <MdDarkMode />
+            <MdDarkMode aria-hidden={true} />
           </StyledIconButton>
         )}
       </div>
