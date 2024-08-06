@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
     text-align: center;
 
     * {
-      font-family: ${(props) => props.theme.fonts.tertiary};
+      font-family: ${(props) => props.theme.fonts.secondary};
       letter-spacing: 1px;
     }
   }

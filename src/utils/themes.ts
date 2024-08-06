@@ -17,9 +17,8 @@ export const darkTheme = {
     extraLarge: '2rem',
   },
   fonts: {
-    primary: '"Ubuntu", sans-serif',
-    secondary: '"Poppins", sans-serif',
-    tertiary: '"Bebas Neue", sans-serif',
+    primary: '"Poppins", sans-serif',
+    secondary: '"Bebas Neue", sans-serif',
   },
   mobile: '768px',
   tablet: '1024px',
