@@ -10,6 +10,8 @@ import {
 } from '../styles/About.styled';
 import { StyledHeading } from '../styles/App.styled';
 import { getTranslation } from '../utils/helpers';
+import { BiCopy } from 'react-icons/bi';
+import { StyledIconButton } from '../styles/App.styled';
 
 type ContactLinksProps = {
   size: number;
@@ -64,6 +66,8 @@ function ContactLinks({ size }: ContactLinksProps) {
 }
 
 function DevInfo() {
+  const intl = useIntl();
+
   return (
     <StyledDevInfo>
       <h3 className="about-heading">
@@ -79,7 +83,19 @@ function DevInfo() {
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoEmailHeading" />
       </h3>
-      <p>dziubenzo@gmail.com</p>
+      <div className="email-wrapper">
+        <p>dziubenzo@gmail.com</p>
+        <StyledIconButton
+          $size={16}
+          aria-label={getTranslation(intl, 'aboutDevInfoEmailLabel')}
+          title={getTranslation(intl, 'aboutDevInfoEmailLabel')}
+          onClick={async () =>
+            await navigator.clipboard.writeText('dziubenzo@gmail.com')
+          }
+        >
+          <BiCopy />
+        </StyledIconButton>
+      </div>
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoFrontendHeading" />
       </h3>

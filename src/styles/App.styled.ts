@@ -7,10 +7,13 @@ type IconButtonProps = {
 export const StyledIconButton = styled.button<IconButtonProps>`
   background-color: transparent;
   border: none;
+  height: ${(props) => props.$size || 16}px;
+  width: ${(props) => props.$size || 16}px;
+  cursor: pointer;
 
   svg {
-    height: ${(props) => props.$size || 16}px;
-    width: ${(props) => props.$size || 16}px;
+    height: 100%;
+    width: 100%;
   }
 `;
 

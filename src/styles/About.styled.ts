@@ -85,10 +85,24 @@ export const StyledDevInfo = styled.div`
     font-family: ${(props) => props.theme.fonts.primary};
   }
 
+  .email-wrapper {
+    background: inherit;
+    display: flex;
+    align-items: center;
+
+    * {
+      background: inherit;
+    }
+  }
+
   @media (width < ${(props) => props.theme.mobile}) {
     .about-heading,
     p {
       text-align: center;
+    }
+
+    .email-wrapper {
+      justify-content: center;
     }
   }
 `;
