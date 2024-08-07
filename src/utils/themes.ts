@@ -22,6 +22,8 @@ export const darkTheme = {
   },
   mobile: '768px',
   tablet: '1024px',
+  boxShadowTile:
+    'rgba(131, 127, 160, 0.35) 0px 6px 12px -2px, rgba(176, 173, 197, 0.2) 0px 3px 7px -3px;',
 };
 
 export const lightThemeCandidate1: ThemeObject = {
@@ -33,11 +35,12 @@ export const lightThemeCandidate1: ThemeObject = {
     secondary: '#50B498',
     tertiary: '#9CDBA6',
   },
+  boxShadowTile:
+    'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;',
 };
 
 export const lightThemeCandidate2: ThemeObject = {
-  ...darkTheme,
-  type: 'light',
+  ...lightThemeCandidate1,
   colours: {
     background: '#F8EDED',
     primary: '#173B45',
