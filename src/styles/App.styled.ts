@@ -25,4 +25,31 @@ export const StyledHeading = styled.h1`
   text-align: center;
 `;
 
-export const StyledMainContainer = styled.main``;
+export const StyledMainContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    gap: 16px;
+
+    section {
+      gap: 16px;
+    }
+  }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    gap: 16px;
+
+    section {
+      gap: 16px;
+    }
+  }
+`;

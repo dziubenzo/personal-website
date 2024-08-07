@@ -1,3 +1,4 @@
+import { BiCopy } from 'react-icons/bi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { MdAlternateEmail } from 'react-icons/md';
@@ -8,10 +9,8 @@ import {
   StyledDevInfo,
   StyledDevPhoto,
 } from '../styles/About.styled';
-import { StyledHeading } from '../styles/App.styled';
+import { StyledHeading, StyledIconButton } from '../styles/App.styled';
 import { getTranslation } from '../utils/helpers';
-import { BiCopy } from 'react-icons/bi';
-import { StyledIconButton } from '../styles/App.styled';
 
 type ContactLinksProps = {
   size: number;

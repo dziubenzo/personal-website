@@ -93,6 +93,7 @@ export const StyledNavBar = styled.nav`
     outline: 3px solid ${(props) => props.theme.colours.secondary};
     border-radius: 0 20% 20% 0;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 
     &.slide-in {
       visibility: visible;

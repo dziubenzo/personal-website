@@ -5,10 +5,6 @@ type ContactLinksProps = {
 };
 
 export const StyledAbout = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
   .about-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -28,14 +24,12 @@ export const StyledAbout = styled.section`
 
   @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
       props.theme.tablet}) {
-    gap: 16px;
     .about-wrapper {
       gap: 16px;
     }
   }
 
   @media (width < ${(props) => props.theme.mobile}) {
-    gap: 16px;
     .about-wrapper {
       display: flex;
       flex-direction: column;
