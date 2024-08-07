@@ -16,7 +16,9 @@ export default function Skills() {
         <FormattedMessage id="skillsSkills" />
       </StyledHeading>
       <div className="skills-wrapper">
-        <div className="horizontal-scroll-wrapper">{renderSkillIcons()}</div>
+        <div className="horizontal-scroll-wrapper animate-ltr">
+          {renderSkillIcons()}
+        </div>
       </div>
     </StyledSkills>
   );
