@@ -29,6 +29,7 @@ export const StyledMainContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  overflow-x: auto;
 
   section {
     display: flex;
