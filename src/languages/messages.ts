@@ -35,6 +35,7 @@ const defaultLanguage = {
   aboutDevInfoShortInfoHeading: 'Short Info',
   aboutDevInfoShortInfo:
     'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
+  skillsSkills: 'Skills',
 };
 
 export const messages: Languages = {
@@ -68,6 +69,7 @@ export const messages: Languages = {
     aboutDevInfoShortInfoHeading: 'Short Info',
     aboutDevInfoShortInfo:
       'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
+    skillsSkills: 'Skills',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -98,5 +100,6 @@ export const messages: Languages = {
     aboutDevInfoShortInfoHeading: 'Krótko o mnie',
     aboutDevInfoShortInfo:
       'Zawsze głodny wiedzy i pragnie dodać coś od siebie do świata IT. Z wykształcenia i z zawodu tłumacz jęz. angielskiego.',
+    skillsSkills: 'Umiejętności',
   },
 };
