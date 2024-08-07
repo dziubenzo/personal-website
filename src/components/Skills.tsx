@@ -1,12 +1,17 @@
 import { FormattedMessage } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
 import { StyledSkills } from '../styles/Skills.styled';
-import { skillIconsArray } from '../utils/skills';
+import { skillIcons } from '../utils/skills';
 
 export default function Skills() {
   function renderSkillIcons() {
-    return skillIconsArray.map((SkillIcon) => (
-      <SkillIcon className="skill-icon" key={SkillIcon.name} />
+    return skillIcons.map((SkillIcon) => (
+      <SkillIcon.icon
+        className="skill-icon"
+        key={SkillIcon.description}
+        title={SkillIcon.description}
+        aria-label={SkillIcon.description}
+      />
     ));
   }
 
