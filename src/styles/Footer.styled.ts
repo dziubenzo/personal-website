@@ -30,6 +30,7 @@ export const StyledLanguagePicker = styled.div`
   .language-buttons-wrapper {
     display: flex;
     gap: 32px;
+    justify-content: center;
 
     button {
       height: 32px;

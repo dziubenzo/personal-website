@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     outline: 2px solid ${(props) => props.theme.colours.secondary}
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     display: flex;
     justify-content: center;
