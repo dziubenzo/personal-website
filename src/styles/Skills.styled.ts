@@ -10,7 +10,7 @@ to {
 
 export const StyledSkills = styled.section`
   .skills-wrapper {
-    padding: 1em 0;
+    padding: 0.5em 0;
     overflow-x: hidden;
 
     .horizontal-scroll-wrapper {
@@ -40,6 +40,30 @@ export const StyledSkills = styled.section`
 
         &:hover {
           transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    .skills-wrapper {
+      padding: 0;
+      overflow-x: revert;
+
+      .horizontal-scroll-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+        width: revert;
+
+        &.animate-ltr {
+          animation: revert;
+        }
+
+        .skill-icon {
+          height: 32px;
+          width: 32px;
         }
       }
     }
