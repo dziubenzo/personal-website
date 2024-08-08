@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
 import { StyledSkills } from '../styles/Skills.styled';
@@ -5,14 +6,22 @@ import { skillIcons } from '../utils/skills';
 
 export default function Skills() {
   function renderSkillIcons() {
-    return skillIcons.map((SkillIcon) => (
-      <SkillIcon.icon
-        className="skill-icon"
-        key={SkillIcon.description}
-        title={SkillIcon.description}
-        aria-label={SkillIcon.description}
-      />
-    ));
+    const iconsArray: ReactNode[] = [];
+
+    for (const key in skillIcons) {
+      const Icon = skillIcons[key].icon;
+      const iconDescription = skillIcons[key].description;
+      iconsArray.push(
+        <Icon
+          className="skill-icon"
+          key={iconDescription}
+          title={iconDescription}
+          aria-label={iconDescription}
+        />,
+      );
+    }
+
+    return iconsArray.map((icon) => icon);
   }
 
   return (

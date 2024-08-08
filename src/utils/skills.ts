@@ -3,6 +3,7 @@
 import { IconType } from 'react-icons';
 
 import {
+  SiCloudinary,
   SiCss3,
   SiCssmodules,
   SiExpress,
@@ -35,32 +36,38 @@ type SkillIcon = {
   description: string;
 };
 
-type SkillIcons = SkillIcon[];
+export type SkillIcons = {
+  [skill: string]: SkillIcon;
+};
 
-export const skillIcons: SkillIcons = [
-  { icon: SiCss3, description: 'CSS' },
-  { icon: SiCssmodules, description: 'CSS Modules' },
-  { icon: SiExpress, description: 'Express' },
-  { icon: SiGit, description: 'Git' },
-  { icon: SiGithub, description: 'GitHub' },
-  { icon: SiGooglechrome, description: 'Chrome DevTools' },
-  { icon: SiHtml5, description: 'HTML' },
-  { icon: SiJavascript, description: 'JavaScript' },
-  { icon: SiJest, description: 'Jest' },
-  { icon: SiLinux, description: 'Linux' },
-  { icon: SiMarkdown, description: 'Markdown' },
-  { icon: SiMongodb, description: 'MongoDB' },
-  { icon: SiNetlify, description: 'Netlify' },
-  { icon: SiNodedotjs, description: 'Node.js' },
-  { icon: SiNpm, description: 'npm' },
-  { icon: SiPassport, description: 'Passport' },
-  { icon: SiReact, description: 'React' },
-  { icon: SiReactrouter, description: 'React Router' },
-  { icon: SiTypescript, description: 'TypeScript' },
-  { icon: SiSass, description: 'Sass' },
-  { icon: SiSocketdotio, description: 'Socket.IO' },
-  { icon: SiStyledcomponents, description: 'styled-components' },
-  { icon: SiVisualstudiocode, description: 'VS Code' },
-  { icon: SiVite, description: 'Vite' },
-  { icon: SiVitest, description: 'Vitest' },
-];
+export const skillIcons: SkillIcons = {
+  cloudinary: { icon: SiCloudinary, description: 'Cloudinary' },
+  css: { icon: SiCss3, description: 'CSS' },
+  cssModules: { icon: SiCssmodules, description: 'CSS Modules' },
+  express: { icon: SiExpress, description: 'Express' },
+  git: { icon: SiGit, description: 'Git' },
+  github: { icon: SiGithub, description: 'GitHub' },
+  chromeDevTools: { icon: SiGooglechrome, description: 'Chrome DevTools' },
+  html: { icon: SiHtml5, description: 'HTML' },
+  javascript: { icon: SiJavascript, description: 'JavaScript' },
+  jest: { icon: SiJest, description: 'Jest' },
+  linux: { icon: SiLinux, description: 'Linux' },
+  markdown: { icon: SiMarkdown, description: 'Markdown' },
+  mongoDB: { icon: SiMongodb, description: 'MongoDB' },
+  netlify: { icon: SiNetlify, description: 'Netlify' },
+  nodeJS: { icon: SiNodedotjs, description: 'Node.js' },
+  npm: { icon: SiNpm, description: 'npm' },
+  passport: { icon: SiPassport, description: 'Passport' },
+  react: { icon: SiReact, description: 'React' },
+  reactRouter: { icon: SiReactrouter, description: 'React Router' },
+  typescript: { icon: SiTypescript, description: 'TypeScript' },
+  sass: { icon: SiSass, description: 'Sass' },
+  socketIO: { icon: SiSocketdotio, description: 'Socket.IO' },
+  styledComponents: {
+    icon: SiStyledcomponents,
+    description: 'styled-components',
+  },
+  vsCode: { icon: SiVisualstudiocode, description: 'VS Code' },
+  vite: { icon: SiVite, description: 'Vite' },
+  vitest: { icon: SiVitest, description: 'Vitest' },
+};
