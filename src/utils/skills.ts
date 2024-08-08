@@ -31,16 +31,12 @@ import {
   SiVitest,
 } from 'react-icons/si';
 
-type SkillIcon = {
+export type SkillIcon = {
   icon: IconType;
   description: string;
 };
 
-export type SkillIcons = {
-  [skill: string]: SkillIcon;
-};
-
-export const skillIcons: SkillIcons = {
+export const skillIcons = {
   cloudinary: { icon: SiCloudinary, description: 'Cloudinary' },
   css: { icon: SiCss3, description: 'CSS' },
   cssModules: { icon: SiCssmodules, description: 'CSS Modules' },
@@ -70,4 +66,4 @@ export const skillIcons: SkillIcons = {
   vsCode: { icon: SiVisualstudiocode, description: 'VS Code' },
   vite: { icon: SiVite, description: 'Vite' },
   vitest: { icon: SiVitest, description: 'Vitest' },
-};
+} as const satisfies Record<string, SkillIcon>;

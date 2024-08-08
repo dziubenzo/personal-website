@@ -7,8 +7,10 @@ import { skillIcons } from '../utils/skills';
 export default function Skills() {
   function renderSkillIcons() {
     const iconsArray: ReactNode[] = [];
+    // Make sure TS is happy looping through skillIcons properties
+    let key: keyof typeof skillIcons;
 
-    for (const key in skillIcons) {
+    for (key in skillIcons) {
       const Icon = skillIcons[key].icon;
       const iconDescription = skillIcons[key].description;
       iconsArray.push(
