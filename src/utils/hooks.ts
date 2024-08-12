@@ -50,3 +50,11 @@ export const useOutsideTap = (
 
   return sidebarRef;
 };
+
+// Instantiate screenshot refs
+export const useScreenshotRefs = () => {
+  const screenshotOneRef = useRef<HTMLImageElement>(null);
+  const screenshotTwoRef = useRef<HTMLImageElement>(null);
+  const screenshotThreeRef = useRef<HTMLImageElement>(null);
+  return [screenshotOneRef, screenshotTwoRef, screenshotThreeRef];
+};

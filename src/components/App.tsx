@@ -1,6 +1,7 @@
 import About from './About';
 import Footer from './Footer';
 import Header from './Header';
+import Projects from './Projects';
 import Skills from './Skills';
 
 import { StyledMainContainer } from '../styles/App.styled';
@@ -33,6 +34,7 @@ export default function App() {
         <StyledMainContainer>
           <About />
           <Skills />
+          <Projects />
         </StyledMainContainer>
         <Footer
           locale={locale}
