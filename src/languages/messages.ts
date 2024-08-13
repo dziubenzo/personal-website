@@ -39,17 +39,16 @@ const defaultLanguage = {
   projectsProjects: 'Projects',
   projectsScreenshot: 'Screenshot',
   projectsScreenshotNewTab: 'Open screenshot in new tab',
+  projectsFrontendLinkLabel: 'Link to the frontend repository - ',
+  projectsBackendLinkLabel: 'Link to the backend repository - ',
+  projectsDemoLinkLabel: 'Link to the live app - ',
   projectsAuroraName: 'Aurora',
   projectsAuroraDescription:
     'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
-  projectsAuroraFrontendLinkLabel:
-    'Link to the frontend repository of the Aurora project',
-  projectsAuroraBackendLinkLabel:
-    'Link to the backend repository of the Aurora project',
-  projectsAuroraDemoLinkLabel: 'Link to the Aurora app',
   projectsTalkyTalkyName: 'Talky-Talky',
+  projectsTalkyTalkyDescription:
+    'A real-time messaging app with two types of statuses, original GG emoticons, group chats and notifications.',
   projectsWhereIsWallyName: "Where's Wally?",
-  projectsTalkyTalkyDescription: 'PLACEHOLDER',
   projectsWhereIsWallyDescription: 'PLACEHOLDER',
 };
 
@@ -88,17 +87,16 @@ export const messages: Languages = {
     projectsProjects: 'Projects',
     projectsScreenshot: 'Screenshot',
     projectsScreenshotNewTab: 'Open screenshot in new tab',
+    projectsFrontendLinkLabel: 'Link to the frontend repository - ',
+    projectsBackendLinkLabel: 'Link to the backend repository - ',
+    projectsDemoLinkLabel: `Link to the live app - `,
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
       'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
-    projectsAuroraFrontendLinkLabel:
-      'Link to the frontend repository of the Aurora project',
-    projectsAuroraBackendLinkLabel:
-      'Link to the backend repository of the Aurora project',
-    projectsAuroraDemoLinkLabel: 'Link to the Aurora app',
     projectsTalkyTalkyName: 'Talky-Talky',
+    projectsTalkyTalkyDescription:
+      'A real-time messaging app with two types of statuses, original GG emoticons, group chats and notifications.',
     projectsWhereIsWallyName: "Where's Waldo?",
-    projectsTalkyTalkyDescription: 'PLACEHOLDER',
     projectsWhereIsWallyDescription: 'PLACEHOLDER',
   },
   [LOCALES.POLISH]: {
@@ -134,17 +132,16 @@ export const messages: Languages = {
     projectsProjects: 'Projekty',
     projectsScreenshot: 'Zrzut ekranu',
     projectsScreenshotNewTab: 'Otwórz zrzut ekranu w nowej karcie',
+    projectsFrontendLinkLabel:
+      'Odnośnik do repozytorium części frontendowej - ',
+    projectsBackendLinkLabel: 'Odnośnik do repozytorium części backendowej - ',
+    projectsDemoLinkLabel: 'Odnośnik do serwisu ',
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
       'Serwis internetowy przedstawiający linki do różnorodnych treści, który pozwala tworzyć trzy rodzaje postów, pisać komentarze i tworzyć kategorie, oferując przy tym system głosowania na treści i komentarze.',
-    projectsAuroraFrontendLinkLabel:
-      'Odnośnik do repozytorium części frontendowej projektu Aurora',
-    projectsAuroraBackendLinkLabel:
-      'Odnośnik do repozytorium części backendowej projektu Aurora',
-    projectsAuroraDemoLinkLabel: 'Odnośnik do serwisu Aurora',
     projectsTalkyTalkyName: 'Talky-Talky',
-    projectsWhereIsWallyName: 'Gdzie jest Wally?',
     projectsTalkyTalkyDescription: 'COŚ TYMCZASOWEGO',
+    projectsWhereIsWallyName: 'Gdzie jest Wally?',
     projectsWhereIsWallyDescription: 'COŚ TYMCZASOWEGO',
   },
 };

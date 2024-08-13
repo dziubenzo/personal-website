@@ -10,7 +10,7 @@ import {
 } from '../styles/Projects.styled';
 import { getTranslation } from '../utils/helpers';
 import { useScreenshotRefs } from '../utils/hooks';
-import { aurora, type Project } from '../utils/projects';
+import { aurora, talkyTalky, type Project } from '../utils/projects';
 import { SkillIcon } from '../utils/skills';
 
 type ProjectProps = {
@@ -103,22 +103,22 @@ function ProjectDescription({ project }: ProjectProps) {
       <div className="project-links-wrapper">
         <a
           href={project.frontendGitHubLink}
-          title={getTranslation(intl, 'projectsAuroraFrontendLinkLabel')}
-          aria-label={getTranslation(intl, 'projectsAuroraFrontendLinkLabel')}
+          title={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
+          aria-label={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
         >
           <FaGithubAlt aria-hidden={true} />
         </a>
         <a
           href={project.demoLink}
-          title={getTranslation(intl, 'projectsAuroraDemoLinkLabel')}
-          aria-label={getTranslation(intl, 'projectsAuroraDemoLinkLabel')}
+          title={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
+          aria-label={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
         >
           <FaPlayCircle aria-hidden={true} />
         </a>
         <a
           href={project.backendGitHubLink}
-          title={getTranslation(intl, 'projectsAuroraBackendLinkLabel')}
-          aria-label={getTranslation(intl, 'projectsAuroraBackendLinkLabel')}
+          title={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
+          aria-label={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
         >
           <FaGithubAlt aria-hidden={true} />
         </a>
@@ -176,6 +176,7 @@ export default function Projects() {
       </StyledHeading>
       <div className="projects-wrapper">
         <Project project={aurora} />
+        <Project project={talkyTalky} />
       </div>
     </StyledProjects>
   );
