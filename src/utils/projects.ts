@@ -53,3 +53,34 @@ export const aurora: Project = {
     skillIcons.vitest,
   ],
 };
+
+export const talkyTalky: Project = {
+  name: 'projectsTalkyTalkyName',
+  description: 'projectsTalkyTalkyDescription',
+  frontendGitHubLink: 'https://github.com/dziubenzo/messaging-app-frontend',
+  backendGitHubLink: 'https://github.com/dziubenzo/messaging-app-backend',
+  demoLink: 'https://dziubenzo-messaging-app.netlify.app/',
+  screenshotsDesktop: [
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122106/personal_website/screenshots_desktop/jjxejbsnyxeolvgezo2m.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122106/personal_website/screenshots_desktop/hx67nqo5xyoszaqybjad.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122106/personal_website/screenshots_desktop/ertjhebioszvp7ho45mh.png',
+  ],
+  screenshotsMobile: [
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122141/personal_website/screenshots_mobile/poaeducihokc9xpoaseo.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122141/personal_website/screenshots_mobile/frxaodf9nzmvkb8xym7w.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122141/personal_website/screenshots_mobile/txcaepaffvqwssm7s2zy.png',
+  ],
+  frontendStack: [
+    skillIcons.javascript,
+    skillIcons.react,
+    skillIcons.reactRouter,
+    skillIcons.socketIO,
+    skillIcons.styledComponents,
+  ],
+  backendStack: [
+    skillIcons.nodeJS,
+    skillIcons.express,
+    skillIcons.socketIO,
+    skillIcons.passport,
+  ],
+};
