@@ -17,6 +17,7 @@ export const StyledProject = styled.div`
   }
 
   .screenshots-wrapper {
+    border-radius: 8px;
     overflow-x: hidden;
 
     .horizontal-scroll-wrapper {
@@ -25,6 +26,7 @@ export const StyledProject = styled.div`
 
       a {
         min-width: 100%;
+        background-color: ${(props) => props.theme.colours.tertiary};
 
         img {
           display: block;
@@ -42,6 +44,22 @@ export const StyledProject = styled.div`
       &:hover {
         box-shadow: ${(props) => props.theme.boxShadowTile};
       }
+    }
+  }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    .selector-wrapper {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    .screenshots-wrapper {
+      border: 5em solid ${(props) => props.theme.colours.tertiary};
     }
   }
 `;
@@ -86,6 +104,11 @@ export const StyledScreenshotSelector = styled.div`
       }
     }
   }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    top: 3%;
+  }
 `;
 
 export const StyledProjectDescription = styled.div`
@@ -103,21 +126,29 @@ export const StyledProjectDescription = styled.div`
   .project-title,
   .frontend-icons-heading,
   .backend-icons-heading {
-    font-size: ${(props) => props.theme.fontSizes.extraLarge};
     font-family: ${(props) => props.theme.fonts.secondary};
     letter-spacing: 2px;
     text-align: center;
+  }
+
+  .project-title {
+    font-size: 3em;
+  }
+
+  .frontend-icons-heading,
+  .backend-icons-heading {
+    font-size: ${(props) => props.theme.fontSizes.medium};
+    margin-bottom: 0.5em;
   }
 
   .project-icons-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     gap: 32px;
 
-    .frontend-icons,
-    .backend-icons {
+    .frontend-icons-wrapper,
+    .backend-icons-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -195,6 +226,39 @@ export const StyledProjectDescription = styled.div`
           &:hover {
             fill: ${(props) => props.theme.colours.background};
           }
+        }
+      }
+    }
+  }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    gap: 32px;
+
+    .project-title {
+      font-size: 5em;
+    }
+
+    .project-description {
+      text-align: center;
+    }
+
+    .project-icons-wrapper {
+      gap: 128px;
+
+      .frontend-icons-heading,
+      .backend-icons-heading {
+        font-size: ${(props) => props.theme.fontSizes.extraLarge};
+      }
+
+      .frontend-icons-wrapper,
+      .backend-icons-wrapper {
+        flex-direction: revert;
+        gap: 16px;
+
+        svg {
+          height: 36px;
+          width: 36px;
         }
       }
     }

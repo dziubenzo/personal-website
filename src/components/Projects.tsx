@@ -36,6 +36,7 @@ function ScreenshotSelector({ screenshotRefs }: ScreenshotSelectorProps) {
     screenshotRef.current?.scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
+      inline: 'center',
     });
   }
 
@@ -80,18 +81,22 @@ function ProjectDescription({ project }: ProjectProps) {
       <h1 className="project-title">
         <FormattedMessage id={project.name} />
       </h1>
-      <p>
+      <p className="project-description">
         <FormattedMessage id={project.description} />
       </p>
       <div className="project-icons-wrapper">
         <div className="frontend-icons">
           <h3 className="frontend-icons-heading">Frontend</h3>
-          {renderIcons(frontendStack)}
+          <div className="frontend-icons-wrapper">
+            {renderIcons(frontendStack)}
+          </div>
         </div>
         {backendStack && (
           <div className="backend-icons">
             <h3 className="backend-icons-heading">Backend</h3>
-            {renderIcons(backendStack)}
+            <div className="backend-icons-wrapper">
+              {renderIcons(backendStack)}
+            </div>
           </div>
         )}
       </div>
