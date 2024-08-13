@@ -47,7 +47,7 @@ const defaultLanguage = {
     'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
   projectsTalkyTalkyName: 'Talky-Talky',
   projectsTalkyTalkyDescription:
-    'A real-time messaging app with two types of statuses, original GG emoticons, group chats and notifications.',
+    'A real-time messaging app with two types of statuses, original GG emoticons, group chats and toast notifications.',
   projectsWhereIsWallyName: "Where's Wally?",
   projectsWhereIsWallyDescription: 'PLACEHOLDER',
 };
@@ -95,7 +95,7 @@ export const messages: Languages = {
       'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
     projectsTalkyTalkyName: 'Talky-Talky',
     projectsTalkyTalkyDescription:
-      'A real-time messaging app with two types of statuses, original GG emoticons, group chats and notifications.',
+      'A real-time messaging app with two types of statuses, original GG emoticons, group chats and toast notifications.',
     projectsWhereIsWallyName: "Where's Waldo?",
     projectsWhereIsWallyDescription: 'PLACEHOLDER',
   },
@@ -138,9 +138,10 @@ export const messages: Languages = {
     projectsDemoLinkLabel: 'Odnośnik do serwisu ',
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
-      'Serwis internetowy przedstawiający linki do różnorodnych treści, który pozwala tworzyć trzy rodzaje postów, pisać komentarze i tworzyć kategorie, oferując przy tym system głosowania na treści i komentarze.',
+      'Inspirowany Redditem serwis internetowy przedstawiający linki do różnorodnych treści, który pozwala tworzyć trzy rodzaje postów, pisać komentarze i tworzyć kategorie, oferując przy tym system głosowania na treści i komentarze.',
     projectsTalkyTalkyName: 'Talky-Talky',
-    projectsTalkyTalkyDescription: 'COŚ TYMCZASOWEGO',
+    projectsTalkyTalkyDescription:
+      'Aplikacja do czatowania w czasie rzeczywistym inspirowana komunikatorem Gadu-Gadu w wersji 6, oferująca dwa rodzaje statusów, oryginalne emotikony GG, czaty grupowe i powiadomienia typu toast.',
     projectsWhereIsWallyName: 'Gdzie jest Wally?',
     projectsWhereIsWallyDescription: 'COŚ TYMCZASOWEGO',
   },

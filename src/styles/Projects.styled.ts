@@ -268,15 +268,7 @@ export const StyledProjectDescription = styled.div`
       svg:nth-of-type(odd) {
         transform: translateY(-5px);
       }
-    }
 
-    .frontend-icons-wrapper {
-      svg:nth-of-type(even) {
-        transform: translateY(-5px);
-      }
-    }
-
-    .backend-icons-wrapper {
       svg:nth-of-type(even) {
         transform: translateY(5px);
       }
@@ -285,6 +277,10 @@ export const StyledProjectDescription = styled.div`
     .frontend-icons-wrapper {
       svg:nth-of-type(odd) {
         transform: translateY(5px);
+      }
+
+      svg:nth-of-type(even) {
+        transform: translateY(-5px);
       }
     }
 
