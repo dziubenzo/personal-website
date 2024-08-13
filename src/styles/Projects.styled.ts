@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 
-export const StyledProjects = styled.section``;
+export const StyledProjects = styled.section`
+  .projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
+      props.theme.tablet}) {
+    .projects-wrapper {
+      gap: 16px;
+    }
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    .projects-wrapper {
+      gap: 16px;
+    }
+  }
+`;
 
 export const StyledProject = styled.div`
   position: relative;
@@ -11,7 +30,7 @@ export const StyledProject = styled.div`
   .selector-wrapper {
     position: absolute;
     height: 100%;
-    width: calc(100% / 3 * 2); // 2fr
+    width: calc(100% / 3 * 2 - 22px); // 2fr, including grid gap
     background: none;
     pointer-events: none;
   }
@@ -27,11 +46,11 @@ export const StyledProject = styled.div`
       a {
         min-width: 100%;
         background-color: ${(props) => props.theme.colours.tertiary};
+        border-radius: 8px;
 
         img {
           display: block;
           width: 100%;
-          border-radius: 8px;
         }
       }
     }
@@ -59,6 +78,18 @@ export const StyledProject = styled.div`
 
     .screenshots-wrapper {
       border: 5em solid ${(props) => props.theme.colours.tertiary};
+
+      .horizontal-scroll-wrapper {
+        border-radius: 8px;
+
+        a {
+          border-radius: revert;
+
+          img {
+            border-radius: 8px;
+          }
+        }
+      }
     }
   }
 
@@ -70,6 +101,14 @@ export const StyledProject = styled.div`
       height: 100%;
       width: 100%;
     }
+  }
+`;
+
+export const StyledProjectReverse = styled(StyledProject)`
+  grid-template-columns: 1fr 2fr;
+
+  .selector-wrapper {
+    right: 0;
   }
 `;
 

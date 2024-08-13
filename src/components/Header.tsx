@@ -1,9 +1,9 @@
-import { StyledHeader, StyledNavBar } from '../styles/Header.styled';
-import { StyledIconButton } from '../styles/App.styled';
-import { FormattedMessage } from 'react-intl';
-import { useCheckViewportWidth, useOutsideTap } from '../utils/hooks';
-import { MdMenu } from 'react-icons/md';
 import { useState } from 'react';
+import { MdMenu } from 'react-icons/md';
+import { FormattedMessage } from 'react-intl';
+import { StyledIconButton } from '../styles/App.styled';
+import { StyledHeader, StyledNavBar } from '../styles/Header.styled';
+import { useCheckIfMobile, useOutsideTap } from '../utils/hooks';
 
 type NavBarProps = {
   showSidebar?: boolean;
@@ -55,10 +55,11 @@ function NavBar({ showSidebar, setShowSidebar }: NavBarProps) {
 }
 
 export default function Header() {
-  const isMobile = useCheckViewportWidth();
+  const isMobile = useCheckIfMobile();
 
   const [showSidebar, setShowSidebar] = useState(false);
 
+  // Render two different Header components depending on viewport width
   if (isMobile) {
     return (
       <StyledHeader>

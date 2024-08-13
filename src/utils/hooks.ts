@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
 
-// Render two different Header components depending on viewport width
-export const useCheckViewportWidth = () => {
+// Check if the viewport width if smaller than 768px
+export const useCheckIfMobile = () => {
   const theme = useTheme();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -15,6 +15,7 @@ export const useCheckViewportWidth = () => {
       }
     };
 
+    checkViewportWidth();
     window.addEventListener('resize', checkViewportWidth);
 
     return () => {
@@ -23,6 +24,31 @@ export const useCheckViewportWidth = () => {
   }, [window.innerWidth]);
 
   return isMobile;
+};
+
+// Check if the viewport width if larger than or equal to 1024px
+export const useCheckIfDesktop = () => {
+  const theme = useTheme();
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useLayoutEffect(() => {
+    const checkViewportWidth = () => {
+      if (window.innerWidth >= parseInt(theme.tablet)) {
+        setIsDesktop(true);
+      } else {
+        setIsDesktop(false);
+      }
+    };
+
+    checkViewportWidth();
+    window.addEventListener('resize', checkViewportWidth);
+
+    return () => {
+      window.removeEventListener('resize', checkViewportWidth);
+    };
+  }, [window.innerWidth]);
+
+  return isDesktop;
 };
 
 // Close the sidebar on tap outside the sidebar
@@ -43,6 +69,7 @@ export const useOutsideTap = (
       }
     }
     document.addEventListener('mousedown', closeSidebar);
+    
     return () => {
       document.removeEventListener('mousedown', closeSidebar);
     };

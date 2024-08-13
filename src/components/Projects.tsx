@@ -5,17 +5,21 @@ import { StyledHeading } from '../styles/App.styled';
 import {
   StyledProject,
   StyledProjectDescription,
+  StyledProjectReverse,
   StyledProjects,
   StyledScreenshotSelector,
 } from '../styles/Projects.styled';
 import { getTranslation } from '../utils/helpers';
-import { useScreenshotRefs } from '../utils/hooks';
+import { useCheckIfDesktop, useScreenshotRefs } from '../utils/hooks';
 import { aurora, talkyTalky, type Project } from '../utils/projects';
 import { SkillIcon } from '../utils/skills';
 
 type ProjectProps = {
   project: Project;
+  reverse?: true;
 };
+
+type ProjectDescriptionProps = Pick<ProjectProps, 'project'>;
 
 type ScreenshotSelectorProps = {
   screenshotRefs: React.RefObject<HTMLImageElement>[];
@@ -57,7 +61,7 @@ function ScreenshotSelector({ screenshotRefs }: ScreenshotSelectorProps) {
   return <StyledScreenshotSelector>{renderButtons()}</StyledScreenshotSelector>;
 }
 
-function ProjectDescription({ project }: ProjectProps) {
+function ProjectDescription({ project }: ProjectDescriptionProps) {
   const intl = useIntl();
   const { frontendStack, backendStack } = project;
 
@@ -127,10 +131,12 @@ function ProjectDescription({ project }: ProjectProps) {
   );
 }
 
-function Project({ project }: ProjectProps) {
+function Project({ project, reverse }: ProjectProps) {
   const intl = useIntl();
   const { screenshotsDesktop, screenshotsMobile } = project;
+
   const screenshotRefs = useScreenshotRefs();
+  const isDesktop = useCheckIfDesktop();
 
   function renderScreenshots() {
     return screenshotsDesktop.map((screenshotDesktop, index) => {
@@ -155,6 +161,21 @@ function Project({ project }: ProjectProps) {
     });
   }
 
+  // Show project the other way around only if the reverse prop is passed and the device width is at least 1024px
+  if (reverse && isDesktop) {
+    return (
+      <StyledProjectReverse>
+        <ProjectDescription project={project} />
+        <div className="screenshots-wrapper">
+          <div className="horizontal-scroll-wrapper">{renderScreenshots()}</div>
+        </div>
+        <div className="selector-wrapper">
+          <ScreenshotSelector screenshotRefs={screenshotRefs} />
+        </div>
+      </StyledProjectReverse>
+    );
+  }
+
   return (
     <StyledProject>
       <div className="screenshots-wrapper">
@@ -176,7 +197,7 @@ export default function Projects() {
       </StyledHeading>
       <div className="projects-wrapper">
         <Project project={aurora} />
-        <Project project={talkyTalky} />
+        <Project project={talkyTalky} reverse />
       </div>
     </StyledProjects>
   );
