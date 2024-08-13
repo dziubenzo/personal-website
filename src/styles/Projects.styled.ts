@@ -140,7 +140,7 @@ export const StyledScreenshotSelector = styled.div`
 export const StyledProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colours.tertiary};
   padding: 1em;
@@ -163,12 +163,13 @@ export const StyledProjectDescription = styled.div`
 
   .frontend-icons-heading,
   .backend-icons-heading {
-    font-size: ${(props) => props.theme.fontSizes.medium};
+    font-size: ${(props) => props.theme.fontSizes.large};
     margin-bottom: 0.5em;
   }
 
   .project-icons-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 32px;
@@ -176,10 +177,9 @@ export const StyledProjectDescription = styled.div`
     .frontend-icons-wrapper,
     .backend-icons-wrapper {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
 
       svg {
         height: 36px;
@@ -225,22 +225,34 @@ export const StyledProjectDescription = styled.div`
       }
     }
 
-    .project-icons-wrapper {
+    .backend-icons-wrapper {
       svg:nth-of-type(odd) {
-        transform: translateX(-10px);
+        transform: translateY(-5px);
       }
     }
 
-    .project-icons-wrapper {
+    .frontend-icons-wrapper {
       svg:nth-of-type(even) {
-        transform: translateX(10px);
+        transform: translateY(-5px);
+      }
+    }
+
+    .backend-icons-wrapper {
+      svg:nth-of-type(even) {
+        transform: translateY(5px);
+      }
+    }
+
+    .frontend-icons-wrapper {
+      svg:nth-of-type(odd) {
+        transform: translateY(5px);
       }
     }
 
     .frontend-icons:hover,
     .backend-icons:hover {
       svg {
-        transform: translateX(0px);
+        transform: translateY(0px);
       }
     }
 
@@ -270,17 +282,12 @@ export const StyledProjectDescription = styled.div`
     }
 
     .project-icons-wrapper {
+      flex-direction: revert;
       gap: 128px;
 
       .frontend-icons-heading,
       .backend-icons-heading {
         font-size: ${(props) => props.theme.fontSizes.extraLarge};
-      }
-
-      .frontend-icons-wrapper,
-      .backend-icons-wrapper {
-        flex-direction: revert;
-        gap: 16px;
       }
     }
   }
@@ -303,12 +310,6 @@ export const StyledProjectDescription = styled.div`
       .frontend-icons-heading,
       .backend-icons-heading {
         font-size: ${(props) => props.theme.fontSizes.large};
-      }
-
-      .frontend-icons-wrapper,
-      .backend-icons-wrapper {
-        flex-direction: revert;
-        gap: 16px;
       }
     }
   }
