@@ -53,13 +53,22 @@ export const StyledProject = styled.div`
     gap: 16px;
 
     .selector-wrapper {
-      position: absolute;
       height: 100%;
       width: 100%;
     }
 
     .screenshots-wrapper {
       border: 5em solid ${(props) => props.theme.colours.tertiary};
+    }
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    .selector-wrapper {
+      height: 100%;
+      width: 100%;
     }
   }
 `;
@@ -79,6 +88,7 @@ export const StyledScreenshotSelector = styled.div`
     color: white;
     background-color: black;
     cursor: pointer;
+    opacity: 75%;
 
     &.active {
       color: black;
@@ -108,6 +118,22 @@ export const StyledScreenshotSelector = styled.div`
   @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
       props.theme.tablet}) {
     top: 3%;
+
+    button {
+      opacity: 100%;
+    }
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      font-size: ${(props) => props.theme.fontSizes.large};
+      width: 4ch;
+    }
   }
 `;
 
@@ -255,11 +281,34 @@ export const StyledProjectDescription = styled.div`
       .backend-icons-wrapper {
         flex-direction: revert;
         gap: 16px;
+      }
+    }
+  }
 
-        svg {
-          height: 36px;
-          width: 36px;
-        }
+  @media (width < ${(props) => props.theme.mobile}) {
+    gap: 16px;
+
+    .project-title {
+      font-size: 4em;
+    }
+
+    .project-description {
+      text-align: center;
+    }
+
+    .project-icons-wrapper {
+      flex-direction: column;
+      gap: 32px;
+
+      .frontend-icons-heading,
+      .backend-icons-heading {
+        font-size: ${(props) => props.theme.fontSizes.large};
+      }
+
+      .frontend-icons-wrapper,
+      .backend-icons-wrapper {
+        flex-direction: revert;
+        gap: 16px;
       }
     }
   }

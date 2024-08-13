@@ -94,6 +94,7 @@ export const StyledNavBar = styled.nav`
     border-radius: 0 20% 20% 0;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
+    z-index: 1;
 
     &.slide-in {
       visibility: visible;
