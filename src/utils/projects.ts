@@ -48,6 +48,7 @@ export const aurora: Project = {
   backendStack: [
     skillIcons.nodeJS,
     skillIcons.express,
+    skillIcons.mongoDB,
     skillIcons.cloudinary,
     skillIcons.passport,
     skillIcons.vitest,
@@ -80,7 +81,33 @@ export const talkyTalky: Project = {
   backendStack: [
     skillIcons.nodeJS,
     skillIcons.express,
+    skillIcons.mongoDB,
     skillIcons.socketIO,
     skillIcons.passport,
   ],
+};
+
+export const whereIsWally: Project = {
+  name: 'projectsWhereIsWallyName',
+  description: 'projectsWhereIsWallyDescription',
+  frontendGitHubLink: 'https://github.com/dziubenzo/where-is-wally-frontend',
+  backendGitHubLink: 'https://github.com/dziubenzo/where-is-wally-backend',
+  demoLink: 'https://dziubenzo-where-is-wally.netlify.app/',
+  screenshotsDesktop: [
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723563659/personal_website/screenshots_desktop/mefyct5ae7cglaedlz8i.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723563659/personal_website/screenshots_desktop/s9auksjhh0yuk8rqtyn7.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122100/personal_website/screenshots_desktop/rvcgukbgsdjfftqlplqo.png',
+  ],
+  screenshotsMobile: [
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723563316/personal_website/screenshots_mobile/iwhcqwnqxykzog3pezat.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723563317/personal_website/screenshots_mobile/ugswsn7mv1vxstzbvwuf.png',
+    'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122150/personal_website/screenshots_mobile/wzccutuog1bw2hrst1tv.png',
+  ],
+  frontendStack: [
+    skillIcons.javascript,
+    skillIcons.react,
+    skillIcons.reactRouter,
+    skillIcons.styledComponents,
+  ],
+  backendStack: [skillIcons.nodeJS, skillIcons.express, skillIcons.mongoDB],
 };

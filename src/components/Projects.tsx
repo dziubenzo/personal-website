@@ -11,7 +11,12 @@ import {
 } from '../styles/Projects.styled';
 import { getTranslation } from '../utils/helpers';
 import { useCheckIfDesktop, useScreenshotRefs } from '../utils/hooks';
-import { aurora, talkyTalky, type Project } from '../utils/projects';
+import {
+  aurora,
+  talkyTalky,
+  whereIsWally,
+  type Project,
+} from '../utils/projects';
 import { SkillIcon } from '../utils/skills';
 
 type ProjectProps = {
@@ -198,6 +203,7 @@ export default function Projects() {
       <div className="projects-wrapper">
         <Project project={aurora} />
         <Project project={talkyTalky} reverse />
+        <Project project={whereIsWally} />
       </div>
     </StyledProjects>
   );

@@ -342,6 +342,11 @@ export const StyledProjectDescription = styled.div`
       flex-direction: column;
       gap: 32px;
 
+      .frontend-icons-wrapper,
+      .backend-icons-wrapper {
+        flex-wrap: wrap;
+      }
+
       .frontend-icons-heading,
       .backend-icons-heading {
         font-size: ${(props) => props.theme.fontSizes.large};
