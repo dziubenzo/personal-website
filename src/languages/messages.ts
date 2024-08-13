@@ -36,6 +36,21 @@ const defaultLanguage = {
   aboutDevInfoShortInfo:
     'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
   skillsSkills: 'Skills',
+  projectsProjects: 'Projects',
+  projectsScreenshot: 'Screenshot',
+  projectsScreenshotNewTab: 'Open screenshot in new tab',
+  projectsAuroraName: 'Aurora',
+  projectsAuroraDescription:
+    'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
+  projectsAuroraFrontendLinkLabel:
+    'Link to the frontend repository of the Aurora project',
+  projectsAuroraBackendLinkLabel:
+    'Link to the backend repository of the Aurora project',
+  projectsAuroraDemoLinkLabel: 'Link to the Aurora app',
+  projectsTalkyTalkyName: 'Talky-Talky',
+  projectsWhereIsWallyName: "Where's Wally?",
+  projectsTalkyTalkyDescription: 'PLACEHOLDER',
+  projectsWhereIsWallyDescription: 'PLACEHOLDER',
 };
 
 export const messages: Languages = {
@@ -70,6 +85,21 @@ export const messages: Languages = {
     aboutDevInfoShortInfo:
       'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
     skillsSkills: 'Skills',
+    projectsProjects: 'Projects',
+    projectsScreenshot: 'Screenshot',
+    projectsScreenshotNewTab: 'Open screenshot in new tab',
+    projectsAuroraName: 'Aurora',
+    projectsAuroraDescription:
+      'A Reddit-inspired social news aggregation and content rating app featuring three types of posts (text, image and video), comments, categories and likes.',
+    projectsAuroraFrontendLinkLabel:
+      'Link to the frontend repository of the Aurora project',
+    projectsAuroraBackendLinkLabel:
+      'Link to the backend repository of the Aurora project',
+    projectsAuroraDemoLinkLabel: 'Link to the Aurora app',
+    projectsTalkyTalkyName: 'Talky-Talky',
+    projectsWhereIsWallyName: "Where's Waldo?",
+    projectsTalkyTalkyDescription: 'PLACEHOLDER',
+    projectsWhereIsWallyDescription: 'PLACEHOLDER',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -101,5 +131,20 @@ export const messages: Languages = {
     aboutDevInfoShortInfo:
       'Zawsze głodny wiedzy i pragnie dodać coś od siebie do świata IT. Z wykształcenia i z zawodu tłumacz jęz. angielskiego.',
     skillsSkills: 'Umiejętności',
+    projectsProjects: 'Projekty',
+    projectsScreenshot: 'Zrzut ekranu',
+    projectsScreenshotNewTab: 'Otwórz zrzut ekranu w nowej karcie',
+    projectsAuroraName: 'Aurora',
+    projectsAuroraDescription:
+      'Serwis internetowy przedstawiający linki do różnorodnych treści, który pozwala tworzyć trzy rodzaje postów, pisać komentarze i tworzyć kategorie, oferując przy tym system głosowania na treści i komentarze.',
+    projectsAuroraFrontendLinkLabel:
+      'Odnośnik do repozytorium części frontendowej projektu Aurora',
+    projectsAuroraBackendLinkLabel:
+      'Odnośnik do repozytorium części backendowej projektu Aurora',
+    projectsAuroraDemoLinkLabel: 'Odnośnik do serwisu Aurora',
+    projectsTalkyTalkyName: 'Talky-Talky',
+    projectsWhereIsWallyName: 'Gdzie jest Wally?',
+    projectsTalkyTalkyDescription: 'COŚ TYMCZASOWEGO',
+    projectsWhereIsWallyDescription: 'COŚ TYMCZASOWEGO',
   },
 };
