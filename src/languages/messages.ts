@@ -49,7 +49,8 @@ const defaultLanguage = {
   projectsTalkyTalkyDescription:
     'A real-time messaging app with two types of statuses, original GG emoticons, group chats and toast notifications.',
   projectsWhereIsWallyName: "Where's Wally?",
-  projectsWhereIsWallyDescription: 'PLACEHOLDER',
+  projectsWhereIsWallyDescription:
+    "A Where's Wally app featuring 7 levels, image magnifying glass, level hints and a level-filterable leaderboard.",
 };
 
 export const messages: Languages = {
@@ -97,7 +98,8 @@ export const messages: Languages = {
     projectsTalkyTalkyDescription:
       'A real-time messaging app with two types of statuses, original GG emoticons, group chats and toast notifications.',
     projectsWhereIsWallyName: "Where's Waldo?",
-    projectsWhereIsWallyDescription: 'PLACEHOLDER',
+    projectsWhereIsWallyDescription:
+      "A Where's Waldo app featuring 7 levels, image magnifying glass, level hints and a level-filterable leaderboard.",
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -138,11 +140,12 @@ export const messages: Languages = {
     projectsDemoLinkLabel: 'Odnośnik do serwisu ',
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
-      'Inspirowany Redditem serwis internetowy przedstawiający linki do różnorodnych treści, który pozwala tworzyć trzy rodzaje postów, pisać komentarze i tworzyć kategorie, oferując przy tym system głosowania na treści i komentarze.',
+      'Inspirowany Redditem serwis internetowy przedstawiający linki do różnorodnych treści z możliwością publikacji trzech rodzajów postów, pisania komentarzy oraz systemem głosowania na treści i komentarze.',
     projectsTalkyTalkyName: 'Talky-Talky',
     projectsTalkyTalkyDescription:
       'Aplikacja do czatowania w czasie rzeczywistym inspirowana komunikatorem Gadu-Gadu w wersji 6, oferująca dwa rodzaje statusów, oryginalne emotikony GG, czaty grupowe i powiadomienia typu toast.',
     projectsWhereIsWallyName: 'Gdzie jest Wally?',
-    projectsWhereIsWallyDescription: 'COŚ TYMCZASOWEGO',
+    projectsWhereIsWallyDescription:
+      'Aplikacja oparta na książkach "Gdzie jest Wally?" z 7 obrazkami do przejścia, lupą powiększającą obrazek, podpowiedziami i tablicą wyników z podziałem na poziomy.',
   },
 };
