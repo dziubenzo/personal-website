@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Projects from './Projects';
 import Skills from './Skills';
+import ContactForm from './ContactForm';
 
 import { StyledMainContainer } from '../styles/App.styled';
 import GlobalStyle from '../styles/GlobalStyle';
@@ -37,6 +38,7 @@ export default function App() {
           <Skills />
           <Projects />
           <CV />
+          <ContactForm />
         </StyledMainContainer>
         <Footer
           locale={locale}
