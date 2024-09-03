@@ -1,4 +1,5 @@
 import About from './About';
+import CV from './CV';
 import Footer from './Footer';
 import Header from './Header';
 import Projects from './Projects';
@@ -35,6 +36,7 @@ export default function App() {
           <About />
           <Skills />
           <Projects />
+          <CV />
         </StyledMainContainer>
         <Footer
           locale={locale}
