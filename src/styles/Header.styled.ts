@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   .header-headings {
     display: flex;
