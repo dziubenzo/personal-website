@@ -62,11 +62,26 @@ export const StyledContactForm = styled.section`
   @media (hover: hover) {
     form {
       button:hover {
-        transition:
-          background-color 0.15s ease-in-out,
-          color 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
         background-color: ${(props) => props.theme.colours.primary};
         color: ${(props) => props.theme.colours.background};
+      }
+    }
+  }
+
+  @media (width < ${(props) => props.theme.mobile}) {
+    form {
+      input,
+      textarea {
+        width: 100%;
+      }
+
+      textarea {
+        height: 18em;
+      }
+
+      button {
+        font-size: ${(props) => props.theme.fontSizes.medium};
       }
     }
   }

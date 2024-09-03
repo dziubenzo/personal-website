@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const StyledCV = styled.section`
   .cv-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    place-items: center;
     background-color: ${(props) => props.theme.colours.tertiary};
     border-radius: 8px;
-    gap: 92px;
     padding: 1em;
 
     * {
@@ -61,9 +61,6 @@ export const StyledCV = styled.section`
 
   @media (width < ${(props) => props.theme.mobile}) {
     .cv-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
       justify-content: space-around;
 
       .download-cv-wrapper {
