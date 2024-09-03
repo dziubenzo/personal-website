@@ -25,7 +25,7 @@ function Form() {
     );
   }
 
-  // Bring back Send button description in the event of an error
+  // Bring back Send button description if there is a sending error
   if (state.error.status) {
     useEffect(() => {
       setIsSending(false);

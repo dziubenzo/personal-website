@@ -6,7 +6,6 @@ export const StyledCV = styled.section`
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     place-items: center;
-    background-color: ${(props) => props.theme.colours.tertiary};
     border-radius: 8px;
     padding: 1em;
 
@@ -38,21 +37,13 @@ export const StyledCV = styled.section`
   }
 
   @media (hover: hover) {
-    .cv-wrapper {
-      transition: box-shadow 0.3s ease-in-out;
-
-      &:hover {
-        box-shadow: ${(props) => props.theme.boxShadowTile};
-      }
-    }
-
     .download-cv-wrapper {
       a {
         svg {
-          transition: fill 0.15s ease-in-out;
+          transition: transform 0.15s ease-in-out;
 
           &:hover {
-            fill: ${(props) => props.theme.colours.background};
+            transform: scale(1.2);
           }
         }
       }

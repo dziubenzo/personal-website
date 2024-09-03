@@ -57,6 +57,19 @@ export const StyledContactForm = styled.section`
       cursor: pointer;
       background-color: ${(props) => props.theme.colours.background};
     }
+
+    .error-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+
+      svg {
+        height: 32px;
+        width: 32px;
+      }
+    }
   }
 
   .success-message {
@@ -79,26 +92,20 @@ export const StyledContactForm = styled.section`
     }
   }
 
-  .error-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-
-    svg {
-      height: 32px;
-      width: 32px;
-    }
-  }
-
   @media (hover: hover) {
-    form {
-      button:hover {
-        transition: all 0.15s ease-in-out;
-        background-color: ${(props) => props.theme.colours.primary};
-        color: ${(props) => props.theme.colours.background};
+    form,
+    .success-message {
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: ${(props) => props.theme.boxShadowTile};
       }
+    }
+
+    button:hover {
+      transition: all 0.15s ease-in-out;
+      background-color: ${(props) => props.theme.colours.primary};
+      color: ${(props) => props.theme.colours.background};
     }
   }
 
