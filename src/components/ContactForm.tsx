@@ -1,3 +1,6 @@
+import { useForm } from 'formbold-react';
+import { useEffect, useState } from 'react';
+import { BiMessageRoundedCheck, BiMessageRoundedError } from 'react-icons/bi';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
 import { StyledContactForm } from '../styles/ContactForm.styled';
@@ -5,9 +8,38 @@ import { getTranslation } from '../utils/helpers';
 
 function Form() {
   const intl = useIntl();
+  const [isSending, setIsSending] = useState(false);
+  const [state, handleSubmit] = useForm('9RlKM');
+
+  if (state.succeeded) {
+    return (
+      <div className="success-message">
+        <BiMessageRoundedCheck />
+        <p>
+          <FormattedMessage id="contactFormMessageSent1" />
+        </p>
+        <p>
+          <FormattedMessage id="contactFormMessageSent2" />
+        </p>
+      </div>
+    );
+  }
+
+  // Bring back Send button description in the event of an error
+  if (state.error.status) {
+    useEffect(() => {
+      setIsSending(false);
+    }, []);
+  }
 
   return (
-    <form onSubmit={() => console.log('OK')}>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        setIsSending(true);
+        handleSubmit(event);
+      }}
+    >
       <div className="email-wrapper">
         <label htmlFor="email">
           <FormattedMessage id="contactFormEmail" />
@@ -33,8 +65,18 @@ function Form() {
         />
       </div>
       <button type="submit">
-        <FormattedMessage id="contactFormSend" />
+        {isSending ? (
+          <FormattedMessage id="contactFormIsSending" />
+        ) : (
+          <FormattedMessage id="contactFormSend" />
+        )}
       </button>
+      {state.error.status && (
+        <div className="error-message">
+          <BiMessageRoundedError />
+          <FormattedMessage id="contactFormSendingError" />
+        </div>
+      )}
     </form>
   );
 }

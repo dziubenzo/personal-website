@@ -59,6 +59,39 @@ export const StyledContactForm = styled.section`
     }
   }
 
+  .success-message {
+    background-color: ${(props) => props.theme.colours.tertiary};
+    border-radius: 8px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+
+    svg {
+      height: 64px;
+      width: 64px;
+    }
+
+    * {
+      background: inherit;
+    }
+  }
+
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+    svg {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
   @media (hover: hover) {
     form {
       button:hover {

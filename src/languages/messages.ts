@@ -64,6 +64,10 @@ const defaultLanguage = {
   contactFormMessage: 'Message:',
   contactFormMessagePlaceholder: 'Message...',
   contactFormSend: 'Send',
+  contactFormIsSending: 'Sending...',
+  contactFormMessageSent1: 'Message sent successfully!',
+  contactFormMessageSent2: "I'll get back to you as soon as I can.",
+  contactFormSendingError: 'There was an error sending the message.',
 };
 
 export const messages: Languages = {
@@ -126,6 +130,10 @@ export const messages: Languages = {
     contactFormMessage: 'Message:',
     contactFormMessagePlaceholder: 'Message...',
     contactFormSend: 'Send',
+    contactFormIsSending: 'Sending...',
+    contactFormMessageSent1: 'Message sent successfully!',
+    contactFormMessageSent2: "I'll get back to you as soon as I can.",
+    contactFormSendingError: 'There was an error sending the message.',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -186,5 +194,10 @@ export const messages: Languages = {
     contactFormMessage: 'Wiadomość:',
     contactFormMessagePlaceholder: 'Wiadomość...',
     contactFormSend: 'Wyślij',
+    contactFormIsSending: 'Wysyłanie...',
+    contactFormMessageSent1: 'Wiadomość wysłana pomyślnie!',
+    contactFormMessageSent2:
+      'Odpowiem na wiadomość tak szybko, jak tylko możliwe.',
+    contactFormSendingError: 'Wystąpił błąd podczas wysyłania wiadomości.',
   },
 };
