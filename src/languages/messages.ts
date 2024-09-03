@@ -51,6 +51,13 @@ const defaultLanguage = {
   projectsWhereIsWallyName: "Where's Wally?",
   projectsWhereIsWallyDescription:
     "A Where's Wally app featuring 7 levels, image magnifying glass, level hints and a level-filterable leaderboard.",
+  cvCV: 'CV',
+  cvDownloadPDF: 'PDF',
+  cvDownloadPDFLink: 'HREF - PDF',
+  cvDownloadWord: 'DOCS',
+  cvDownloadWordLink: 'HREF - DOCS',
+  cvImage: 'Image',
+  cvImageLink: 'HREF - Image',
 };
 
 export const messages: Languages = {
@@ -100,6 +107,13 @@ export const messages: Languages = {
     projectsWhereIsWallyName: "Where's Waldo?",
     projectsWhereIsWallyDescription:
       "A Where's Waldo app featuring 7 levels, image magnifying glass, level hints and a level-filterable leaderboard.",
+    cvCV: 'Resume',
+    cvDownloadPDF: 'PDF',
+    cvDownloadPDFLink: 'HREF - PDF',
+    cvDownloadWord: 'DOCS',
+    cvDownloadWordLink: 'HREF - DOCS',
+    cvImage: 'Image',
+    cvImageLink: 'HREF - Image',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -147,5 +161,12 @@ export const messages: Languages = {
     projectsWhereIsWallyName: 'Gdzie jest Wally?',
     projectsWhereIsWallyDescription:
       'Aplikacja oparta na książkach "Gdzie jest Wally?" z 7 obrazkami do przejścia, lupą powiększającą obrazek, podpowiedziami i tablicą wyników z podziałem na poziomy.',
+    cvCV: 'CV',
+    cvDownloadPDF: 'PDF',
+    cvDownloadPDFLink: 'HREF - PDF',
+    cvDownloadWord: 'DOCS',
+    cvDownloadWordLink: 'HREF - DOCS',
+    cvImage: 'Obrazek',
+    cvImageLink: 'HREF - Image',
   },
 };
