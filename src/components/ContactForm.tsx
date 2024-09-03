@@ -8,26 +8,30 @@ function Form() {
 
   return (
     <form onSubmit={() => console.log('OK')}>
-      <label htmlFor="email">
-        <FormattedMessage id="contactFormEmail" />
-      </label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="example@example.com"
-        required
-      />
-      <label htmlFor="message">
-        <FormattedMessage id="contactFormMessage" />
-      </label>
-      <input
-        type="text"
-        name="message"
-        id="message"
-        placeholder={getTranslation(intl, 'contactFormMessagePlaceholder')}
-        required
-      />
+      <div className="email-wrapper">
+        <label htmlFor="email">
+          <FormattedMessage id="contactFormEmail" />
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder={getTranslation(intl, 'contactFormEmailPlaceholder')}
+          required
+        />
+      </div>
+      <div className="message-wrapper">
+        <label htmlFor="message">
+          <FormattedMessage id="contactFormMessage" />
+        </label>
+        <textarea
+          name="message"
+          id="message"
+          rows={8}
+          placeholder={getTranslation(intl, 'contactFormMessagePlaceholder')}
+          required
+        />
+      </div>
       <button type="submit">
         <FormattedMessage id="contactFormSend" />
       </button>
