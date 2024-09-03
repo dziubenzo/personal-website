@@ -58,6 +58,12 @@ const defaultLanguage = {
   cvDownloadWordLink: 'HREF - DOCS',
   cvImage: 'Image',
   cvImageLink: 'HREF - Image',
+  contactFormContactForm: 'Contact Form',
+  contactFormEmail: 'Email:',
+  contactFormEmailPlaceholder: 'your.email@gmail.com',
+  contactFormMessage: 'Message:',
+  contactFormMessagePlaceholder: 'Message...',
+  contactFormSend: 'Send',
 };
 
 export const messages: Languages = {
@@ -114,6 +120,12 @@ export const messages: Languages = {
     cvDownloadWordLink: 'HREF - DOCS',
     cvImage: 'Image',
     cvImageLink: 'HREF - Image',
+    contactFormContactForm: 'Contact Form',
+    contactFormEmail: 'Email:',
+    contactFormEmailPlaceholder: 'your.email@gmail.com',
+    contactFormMessage: 'Message:',
+    contactFormMessagePlaceholder: 'Message...',
+    contactFormSend: 'Send',
   },
   [LOCALES.POLISH]: {
     headerAbout: 'O mnie',
@@ -168,5 +180,11 @@ export const messages: Languages = {
     cvDownloadWordLink: 'HREF - DOCS',
     cvImage: 'Obrazek',
     cvImageLink: 'HREF - Image',
+    contactFormContactForm: 'Formularz kontaktowy',
+    contactFormEmail: 'Adres e-mail:',
+    contactFormEmailPlaceholder: 'twoj.adres.email@gmail.com',
+    contactFormMessage: 'Wiadomość:',
+    contactFormMessagePlaceholder: 'Wiadomość...',
+    contactFormSend: 'Wyślij',
   },
 };
