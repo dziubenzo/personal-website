@@ -13,10 +13,25 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     color: ${(props) => props.theme.colours.primary};
     font-family: ${(props) => props.theme.fonts.primary};
     font-style: normal;
-  }
 
-  *:focus-visible {
-    outline: 2px solid ${(props) => props.theme.colours.secondary}
+    *:focus-visible {
+      outline: 2px solid ${(props) => props.theme.colours.secondary}
+    }
+
+    @supports (scrollbar-width: auto) {
+      scrollbar-color: ${(props) => props.theme.colours.secondary} ${(props) => props.theme.colours.background};
+      scrollbar-width: auto;
+    }
+
+    @supports selector(::-webkit-scrollbar) {
+      &::-webkit-scrollbar-thumb {
+        background: ${(props) => props.theme.colours.secondary}
+      }
+
+      &::-webkit-scrollbar-track {
+        background: ${(props) => props.theme.colours.background}
+      }
+    }
   }
 
   html {
