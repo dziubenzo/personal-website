@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaGithubAlt, FaPlayCircle } from 'react-icons/fa';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
@@ -10,7 +10,7 @@ import {
   StyledScreenshotSelector,
 } from '../styles/Projects.styled';
 import { getTranslation } from '../utils/helpers';
-import { useCheckIfDesktop, useScreenshotRefs } from '../utils/hooks';
+import { useCheckIfDesktop } from '../utils/hooks';
 import {
   aurora,
   talkyTalky,
@@ -27,43 +27,65 @@ type ProjectProps = {
 type ProjectDescriptionProps = Pick<ProjectProps, 'project'>;
 
 type ScreenshotSelectorProps = {
-  screenshotRefs: React.RefObject<HTMLImageElement>[];
+  screenshotsDivRef: React.RefObject<HTMLDivElement>;
 };
 
 type ActiveButton = 1 | 2 | 3;
 
-function ScreenshotSelector({ screenshotRefs }: ScreenshotSelectorProps) {
+function ScreenshotSelector({ screenshotsDivRef }: ScreenshotSelectorProps) {
   const [activeButton, setActiveButton] = useState<ActiveButton>(1);
 
-  function moveToScreenshot(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    screenshotRef: React.RefObject<HTMLImageElement>,
-  ) {
-    const clickedButton = parseInt(event.currentTarget.innerHTML);
-    if (clickedButton === 1 || clickedButton === 2 || clickedButton === 3)
-      setActiveButton(clickedButton);
-    screenshotRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center',
-    });
+  function moveToScreenshot(clickedButton: ActiveButton) {
+    setActiveButton(clickedButton);
+    switch (clickedButton) {
+      case 1:
+        screenshotsDivRef.current?.scrollTo({
+          left: 0,
+          behavior: 'smooth',
+        });
+        break;
+      case 2:
+        screenshotsDivRef.current?.scrollTo({
+          left: screenshotsDivRef.current?.offsetWidth,
+          behavior: 'smooth',
+        });
+        break;
+      case 3:
+        screenshotsDivRef.current?.scrollTo({
+          left: screenshotsDivRef.current?.offsetWidth * 2,
+          behavior: 'smooth',
+        });
+        break;
+      default:
+        break;
+    }
   }
 
-  function renderButtons() {
-    return screenshotRefs.map((ref, index) => {
-      return (
-        <button
-          className={activeButton === index + 1 ? 'active' : undefined}
-          key={index}
-          onClick={(event) => moveToScreenshot(event, ref)}
-        >
-          {index + 1}
-        </button>
-      );
-    });
-  }
-
-  return <StyledScreenshotSelector>{renderButtons()}</StyledScreenshotSelector>;
+  return (
+    <StyledScreenshotSelector>
+      <button
+        className={activeButton === 1 ? 'active' : undefined}
+        key={1}
+        onClick={() => moveToScreenshot(1)}
+      >
+        1
+      </button>
+      <button
+        className={activeButton === 2 ? 'active' : undefined}
+        key={2}
+        onClick={() => moveToScreenshot(2)}
+      >
+        2
+      </button>
+      <button
+        className={activeButton === 3 ? 'active' : undefined}
+        key={3}
+        onClick={() => moveToScreenshot(3)}
+      >
+        3
+      </button>
+    </StyledScreenshotSelector>
+  );
 }
 
 function ProjectDescription({ project }: ProjectDescriptionProps) {
@@ -140,7 +162,7 @@ function Project({ project, reverse }: ProjectProps) {
   const intl = useIntl();
   const { screenshotsDesktop, screenshotsMobile } = project;
 
-  const screenshotRefs = useScreenshotRefs();
+  const screenshotsDivRef = useRef<HTMLDivElement>(null);
   const isDesktop = useCheckIfDesktop();
 
   function renderScreenshots() {
@@ -155,7 +177,6 @@ function Project({ project, reverse }: ProjectProps) {
         >
           <img
             key={`${getTranslation(intl, project.name)} ${index + 1}`}
-            ref={screenshotRefs[index]}
             srcSet={`${screenshotDesktop} 1329w, ${screenshotsMobile[index]} 768w`}
             sizes="(width < 768px) 768w, 1329w"
             src={screenshotDesktop}
@@ -172,10 +193,12 @@ function Project({ project, reverse }: ProjectProps) {
       <StyledProjectReverse>
         <ProjectDescription project={project} />
         <div className="screenshots-wrapper">
-          <div className="horizontal-scroll-wrapper">{renderScreenshots()}</div>
+          <div ref={screenshotsDivRef} className="horizontal-scroll-wrapper">
+            {renderScreenshots()}
+          </div>
         </div>
         <div className="selector-wrapper">
-          <ScreenshotSelector screenshotRefs={screenshotRefs} />
+          <ScreenshotSelector screenshotsDivRef={screenshotsDivRef} />
         </div>
       </StyledProjectReverse>
     );
@@ -184,10 +207,12 @@ function Project({ project, reverse }: ProjectProps) {
   return (
     <StyledProject>
       <div className="screenshots-wrapper">
-        <div className="horizontal-scroll-wrapper">{renderScreenshots()}</div>
+        <div ref={screenshotsDivRef} className="horizontal-scroll-wrapper">
+          {renderScreenshots()}
+        </div>
       </div>
       <div className="selector-wrapper">
-        <ScreenshotSelector screenshotRefs={screenshotRefs} />
+        <ScreenshotSelector screenshotsDivRef={screenshotsDivRef} />
       </div>
       <ProjectDescription project={project} />
     </StyledProject>

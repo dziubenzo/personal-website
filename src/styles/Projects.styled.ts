@@ -37,11 +37,11 @@ export const StyledProject = styled.div`
 
   .screenshots-wrapper {
     border-radius: 8px;
-    overflow-x: hidden;
 
     .horizontal-scroll-wrapper {
       display: flex;
       width: fit-content;
+      overflow-x: hidden;
 
       a {
         min-width: 100%;
