@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { MdMenu } from 'react-icons/md';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledIconButton } from '../styles/App.styled';
-import { StyledHeader, StyledNavBar } from '../styles/Header.styled';
+import {
+  StyledDevHeadings,
+  StyledHeader,
+  StyledNavBar,
+} from '../styles/Header.styled';
+import { getTranslation } from '../utils/helpers';
 import { useCheckIfMobile, useOutsideTap } from '../utils/hooks';
 
 type NavBarProps = {
@@ -54,6 +59,23 @@ function NavBar({ showSidebar, setShowSidebar }: NavBarProps) {
   );
 }
 
+function DevHeadings() {
+  const intl = useIntl();
+
+  return (
+    <StyledDevHeadings>
+      <a
+        href="#"
+        title={getTranslation(intl, 'headerScrollLabel')}
+        aria-label={getTranslation(intl, 'headerScrollLabel')}
+      >
+        <h1>Michał Dziubany</h1>
+        <h3>Fullstack Developer</h3>
+      </a>
+    </StyledDevHeadings>
+  );
+}
+
 export default function Header() {
   const isMobile = useCheckIfMobile();
 
@@ -63,10 +85,7 @@ export default function Header() {
   if (isMobile) {
     return (
       <StyledHeader>
-        <div className="header-headings">
-          <h1>Michał Dziubany</h1>
-          <h3>Fullstack Developer</h3>
-        </div>
+        <DevHeadings />
         <StyledIconButton
           $size={32}
           onClick={() => setShowSidebar(!showSidebar)}
@@ -80,10 +99,7 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <div className="header-headings">
-        <h1>Michał Dziubany</h1>
-        <h3>Fullstack Developer</h3>
-      </div>
+      <DevHeadings />
       <NavBar />
     </StyledHeader>
   );

@@ -7,18 +7,6 @@ export const StyledHeader = styled.header`
   top: 0;
   z-index: 1;
 
-  .header-headings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    * {
-      font-family: ${(props) => props.theme.fonts.secondary};
-      letter-spacing: 1px;
-    }
-  }
-
   @media (width >= ${(props) => props.theme.mobile}) and (width < ${(props) =>
       props.theme.tablet}) {
     flex-direction: column;
@@ -26,9 +14,25 @@ export const StyledHeader = styled.header`
   }
 
   @media (width < ${(props) => props.theme.mobile}) {
-    flex-direction: column;
+    justify-content: space-around;
     gap: 16px;
     text-align: center;
+  }
+`;
+
+export const StyledDevHeadings = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  * {
+    font-family: ${(props) => props.theme.fonts.secondary};
+    letter-spacing: 1px;
   }
 `;
 
@@ -89,8 +93,8 @@ export const StyledNavBar = styled.nav`
     flex-direction: column;
     justify-content: center;
     left: 0;
+    top: 0;
     width: 30%;
-    transform: translateY(50%);
     height: calc(50% - 2em);
     margin-left: revert;
     outline: 3px solid ${(props) => props.theme.colours.secondary};
