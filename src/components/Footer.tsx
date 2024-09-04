@@ -8,7 +8,7 @@ import { getTranslation } from '../utils/helpers';
 import { LOCALES, LocalesValues } from '../languages/locales';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { StyledIconButton } from '../styles/App.styled';
-import { darkTheme, lightThemeCandidate2, ThemeObject } from '../utils/themes';
+import { darkTheme, lightTheme, ThemeObject } from '../utils/themes';
 
 type FooterProps = {
   locale: LocalesValues;
@@ -82,11 +82,11 @@ function ThemePicker({ theme, setTheme }: ThemePickerProps) {
         <FormattedMessage id="footerTheme" />
       </h3>
       <div className="theme-buttons-wrapper">
-        {theme.type !== lightThemeCandidate2.type && (
+        {theme.type !== lightTheme.type && (
           <StyledIconButton
             $size={32}
             title={getTranslation(intl, 'footerLight')}
-            onClick={() => changeTheme(lightThemeCandidate2)}
+            onClick={() => changeTheme(lightTheme)}
           >
             <MdLightMode aria-hidden={true} />
           </StyledIconButton>

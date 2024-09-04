@@ -26,25 +26,15 @@ export const darkTheme = {
     'rgba(131, 127, 160, 0.35) 0px 6px 12px -2px, rgba(176, 173, 197, 0.2) 0px 3px 7px -3px;',
 };
 
-export const lightThemeCandidate1: ThemeObject = {
+export const lightTheme: ThemeObject = {
   ...darkTheme,
   type: 'light',
-  colours: {
-    background: '#DEF9C4',
-    primary: '#468585',
-    secondary: '#50B498',
-    tertiary: '#9CDBA6',
-  },
-  boxShadowTile:
-    'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;',
-};
-
-export const lightThemeCandidate2: ThemeObject = {
-  ...lightThemeCandidate1,
   colours: {
     background: '#F8EDED',
     primary: '#173B45',
     secondary: '#B43F3F',
     tertiary: '#FF8225',
   },
+  boxShadowTile:
+    'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;',
 };

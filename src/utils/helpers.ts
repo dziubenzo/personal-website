@@ -1,7 +1,7 @@
 import { IntlShape } from 'react-intl';
 import { LanguageKeys } from '../languages/messages';
 import { LOCALES, LocalesValues } from '../languages/locales';
-import { darkTheme, lightThemeCandidate2, ThemeObject } from './themes';
+import { darkTheme, lightTheme, ThemeObject } from './themes';
 
 // Get translation
 // Only allow defined language object keys as second argument
@@ -57,15 +57,26 @@ export const getPreferredTheme = () => {
     if (localStorageValue === 'dark') {
       preferredTheme = darkTheme;
     } else {
-      preferredTheme = lightThemeCandidate2;
+      preferredTheme = lightTheme;
     }
   } else if (!darkThemePreference.matches) {
-    preferredTheme = lightThemeCandidate2;
+    preferredTheme = lightTheme;
   } else {
     preferredTheme = darkTheme;
   }
 
   localStorage.setItem('theme', preferredTheme.type);
+
+  // Set favicon according to the theme
+  const faviconLinkElement =
+    document.querySelector<HTMLLinkElement>("link[rel='icon']");
+
+  if (faviconLinkElement) {
+    faviconLinkElement.setAttribute(
+      'href',
+      `/favicon-${preferredTheme.type}.ico`,
+    );
+  }
 
   return preferredTheme;
 };
