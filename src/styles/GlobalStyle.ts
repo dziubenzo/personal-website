@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+type GlobalStyleProps = {
+  $headerHeight: number;
+};
+
+const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   * {
     margin: 0;
     padding: 0;
@@ -17,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: ${(props) => props.$headerHeight || 0}px;
   }
 
   body {

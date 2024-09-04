@@ -1,10 +1,10 @@
 import About from './About';
+import ContactForm from './ContactForm';
 import CV from './CV';
 import Footer from './Footer';
 import Header from './Header';
 import Projects from './Projects';
 import Skills from './Skills';
-import ContactForm from './ContactForm';
 
 import { StyledMainContainer } from '../styles/App.styled';
 import GlobalStyle from '../styles/GlobalStyle';
@@ -15,6 +15,7 @@ import { IntlProvider } from 'react-intl';
 import { LOCALES, LocalesValues } from '../languages/locales';
 import { messages } from '../languages/messages';
 import { getPreferredLang, getPreferredTheme } from '../utils/helpers';
+import { useHeaderHeight } from '../utils/hooks';
 import { ThemeObject } from '../utils/themes';
 
 export default function App() {
@@ -24,6 +25,8 @@ export default function App() {
   const [locale, setLocale] = useState<LocalesValues>(preferredLang);
   const [theme, setTheme] = useState<ThemeObject>(preferredTheme);
 
+  const headerHeight = useHeaderHeight();
+
   return (
     <IntlProvider
       defaultLocale={LOCALES.BRITISH_ENGLISH}
@@ -31,7 +34,7 @@ export default function App() {
       messages={messages[locale]}
     >
       <Theme theme={theme}>
-        <GlobalStyle />
+        <GlobalStyle $headerHeight={headerHeight} />
         <Header />
         <StyledMainContainer>
           <About />

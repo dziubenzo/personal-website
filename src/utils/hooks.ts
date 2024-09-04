@@ -51,6 +51,29 @@ export const useCheckIfDesktop = () => {
   return isDesktop;
 };
 
+// Obtain header height whenever the page is resized
+export const useHeaderHeight = () => {
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    const getHeaderHeight = () => {
+      const newHeight = document.querySelector('header')?.offsetHeight;
+      if (newHeight) {
+        setHeaderHeight(newHeight);
+      }
+    };
+
+    getHeaderHeight();
+    window.addEventListener('resize', getHeaderHeight);
+
+    return () => {
+      window.removeEventListener('resize', getHeaderHeight);
+    };
+  }, []);
+
+  return headerHeight;
+};
+
 // Close the sidebar on tap outside the sidebar
 export const useOutsideTap = (
   setShowSidebar?: React.Dispatch<React.SetStateAction<boolean>>,
@@ -69,7 +92,7 @@ export const useOutsideTap = (
       }
     }
     document.addEventListener('mousedown', closeSidebar);
-    
+
     return () => {
       document.removeEventListener('mousedown', closeSidebar);
     };
