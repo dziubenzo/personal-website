@@ -1,5 +1,3 @@
-// No webpack (not sure) or supertest (no icon)
-
 import { IconType } from 'react-icons';
 
 import {
@@ -13,7 +11,6 @@ import {
   SiHtml5,
   SiJavascript,
   SiJest,
-  SiLinux,
   SiMarkdown,
   SiMongodb,
   SiNetlify,
@@ -47,7 +44,6 @@ export const skillIcons = {
   html: { icon: SiHtml5, description: 'HTML' },
   javascript: { icon: SiJavascript, description: 'JavaScript' },
   jest: { icon: SiJest, description: 'Jest' },
-  linux: { icon: SiLinux, description: 'Linux' },
   markdown: { icon: SiMarkdown, description: 'Markdown' },
   mongoDB: { icon: SiMongodb, description: 'MongoDB' },
   netlify: { icon: SiNetlify, description: 'Netlify' },

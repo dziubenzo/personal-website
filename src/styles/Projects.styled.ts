@@ -42,6 +42,7 @@ export const StyledProject = styled.div`
       display: flex;
       width: fit-content;
       overflow-x: hidden;
+      border-radius: 8px;
 
       a {
         min-width: 100%;
@@ -197,7 +198,7 @@ export const StyledProjectDescription = styled.div`
   }
 
   .project-title {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   .frontend-icons-heading,
@@ -225,6 +226,11 @@ export const StyledProjectDescription = styled.div`
         width: 36px;
       }
     }
+  }
+
+  hr {
+    border: 1px solid ${(props) => props.theme.colours.primary};
+    margin-top: auto;
   }
 
   .project-links-wrapper {
@@ -331,7 +337,7 @@ export const StyledProjectDescription = styled.div`
     gap: 16px;
 
     .project-title {
-      font-size: 4em;
+      font-size: 3.5em;
     }
 
     .project-description {

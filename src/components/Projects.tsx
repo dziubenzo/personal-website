@@ -131,6 +131,7 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
           </div>
         )}
       </div>
+      <hr />
       <div className="project-links-wrapper">
         <a
           href={project.frontendGitHubLink}
