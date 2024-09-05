@@ -81,15 +81,7 @@ export const StyledProject = styled.div`
       border: 5em solid ${(props) => props.theme.colours.tertiary};
 
       .horizontal-scroll-wrapper {
-        border-radius: 8px;
-
-        a {
-          border-radius: revert;
-
-          img {
-            border-radius: 8px;
-          }
-        }
+        border-radius: revert;
       }
     }
   }

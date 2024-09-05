@@ -18,6 +18,12 @@ export const StyledHeader = styled.header`
     gap: 16px;
     text-align: center;
   }
+
+  // Revert sticky header if a probable mobile device is in landscape mode
+  // Use a lower pixel value for mobile devices compared to that in the theme to prevent triggering the media query when the DevTools are opened on the bottom of a desktop screen
+  @media (height < 600px) and (orientation: landscape) {
+    position: revert;
+  }
 `;
 
 export const StyledDevHeadings = styled.div`

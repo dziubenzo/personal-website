@@ -57,6 +57,13 @@ export const useHeaderHeight = () => {
 
   useLayoutEffect(() => {
     const getHeaderHeight = () => {
+      // Set header height to 0 if a probable mobile device is in landscape mode as the header is not sticky in this case
+      const landscapeAndMobile = window.matchMedia(
+        '(orientation: landscape) and (height < 600px)',
+      );
+      if (landscapeAndMobile.matches) {
+        return setHeaderHeight(0);
+      }
       const newHeight = document.querySelector('header')?.offsetHeight;
       if (newHeight) {
         setHeaderHeight(newHeight);
