@@ -84,8 +84,45 @@ export const StyledDevInfo = styled.div`
     display: flex;
     align-items: center;
 
+    .copy-button-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .email-copied-popup {
+        position: absolute;
+        opacity: 0;
+        top: 23px;
+        left: -24px;
+        background-color: ${(props) => props.theme.colours.background};
+        color: ${(props) => props.theme.colours.primary};
+        outline: 2px solid ${(props) => props.theme.colours.primary};
+        font-size: ${(props) => props.theme.fontSizes.small};
+        border-radius: 16px;
+        overflow: hidden;
+        transition: opacity 0.4s ease-in-out;
+        padding: 0.25em;
+
+        &.show {
+          opacity: 1;
+        }
+      }
+    }
+
     * {
       background: inherit;
+    }
+  }
+
+  @media (hover: hover) {
+    .email-wrapper {
+      svg {
+        transition: fill 0.15s ease-in-out;
+
+        &:hover {
+          fill: ${(props) => props.theme.colours.background};
+        }
+      }
     }
   }
 

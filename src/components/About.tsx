@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BiCopy } from 'react-icons/bi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -66,6 +67,7 @@ function ContactLinks({ size }: ContactLinksProps) {
 
 function DevInfo() {
   const intl = useIntl();
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <StyledDevInfo>
@@ -84,16 +86,25 @@ function DevInfo() {
       </h3>
       <div className="email-wrapper">
         <p>dziubenzo@gmail.com</p>
-        <StyledIconButton
-          $size={16}
-          aria-label={getTranslation(intl, 'aboutDevInfoEmailLabel')}
-          title={getTranslation(intl, 'aboutDevInfoEmailLabel')}
-          onClick={async () =>
-            await navigator.clipboard.writeText('dziubenzo@gmail.com')
-          }
-        >
-          <BiCopy />
-        </StyledIconButton>
+        <div className="copy-button-wrapper">
+          <StyledIconButton
+            $size={16}
+            aria-label={getTranslation(intl, 'aboutDevInfoEmailLabel')}
+            title={getTranslation(intl, 'aboutDevInfoEmailLabel')}
+            onClick={async () => {
+              setShowPopup(true);
+              setTimeout(() => setShowPopup(false), 1000);
+              await navigator.clipboard.writeText('dziubenzo@gmail.com');
+            }}
+          >
+            <BiCopy />
+          </StyledIconButton>
+          <div className={`email-copied-popup ${showPopup ? 'show' : ''}`}>
+            <p>
+              <FormattedMessage id="aboutDevInfoEmailCopied" />
+            </p>
+          </div>
+        </div>
       </div>
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoFrontendHeading" />
