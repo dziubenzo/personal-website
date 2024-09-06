@@ -26,31 +26,36 @@ function NavBar({ showSidebar, setShowSidebar }: NavBarProps) {
 
   const sidebarRef = useOutsideTap(setShowSidebar);
 
+  // Hide sidebar on page section link tap
+  function handleLinkTap() {
+    if (showSidebar && setShowSidebar) setShowSidebar(false);
+  }
+
   return (
     <StyledNavBar ref={sidebarRef} className={handleNavBarClasses()}>
       <ul>
         <li>
-          <a href="#about">
+          <a href="#about" onClick={handleLinkTap}>
             <FormattedMessage id="headerAbout" />
           </a>
         </li>
         <li>
-          <a href="#skills">
+          <a href="#skills" onClick={handleLinkTap}>
             <FormattedMessage id="headerSkills" />
           </a>
         </li>
         <li>
-          <a href="#projects">
+          <a href="#projects" onClick={handleLinkTap}>
             <FormattedMessage id="headerProjects" />
           </a>
         </li>
         <li>
-          <a href="#CV">
+          <a href="#CV" onClick={handleLinkTap}>
             <FormattedMessage id="headerCV" />
           </a>
         </li>
         <li>
-          <a href="#contact-form">
+          <a href="#contact-form" onClick={handleLinkTap}>
             <FormattedMessage id="headerContactForm" />
           </a>
         </li>
