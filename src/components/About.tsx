@@ -56,7 +56,7 @@ function ContactLinks({ size }: ContactLinksProps) {
         <FaXTwitter aria-hidden={true} />
       </a>
       <a
-        href="mailto:dziubenzo@gmail.com"
+        href="mailto:michal@dziubany.dev"
         aria-label={getTranslation(intl, 'aboutContactLinkEmailLabel')}
       >
         <MdAlternateEmail aria-hidden={true} />
@@ -85,7 +85,7 @@ function DevInfo() {
         <FormattedMessage id="aboutDevInfoEmailHeading" />
       </h3>
       <div className="email-wrapper">
-        <p>dziubenzo@gmail.com</p>
+        <p>michal@dziubany.dev</p>
         <div className="copy-button-wrapper">
           <StyledIconButton
             $size={16}
@@ -94,7 +94,7 @@ function DevInfo() {
             onClick={async () => {
               setShowPopup(true);
               setTimeout(() => setShowPopup(false), 1000);
-              await navigator.clipboard.writeText('dziubenzo@gmail.com');
+              await navigator.clipboard.writeText('michal@dziubany.dev');
             }}
           >
             <BiCopy />

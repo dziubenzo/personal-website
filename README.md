@@ -1,10 +1,10 @@
 # Personal Website
 
-This is the repo for my personal website.
+This is the repo for my personal website - [dziubany.dev](https://dziubany.dev)
 
-It is available in English (British and American varieties) and in Polish.
+It is available in **English** (British and American varieties) and in **Polish**.
 
-It also offers two colour themes (light and dark).
+It also offers **two themes** (light and dark).
 
 ## Tech Stack
 
