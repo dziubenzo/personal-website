@@ -10,7 +10,7 @@ import {
   StyledScreenshotSelector,
 } from '../styles/Projects.styled';
 import { getTranslation } from '../utils/helpers';
-import { useCheckIfDesktop } from '../utils/hooks';
+import { useCheckIfDesktop, useShowFirstScreenshot } from '../utils/hooks';
 import {
   aurora,
   talkyTalky,
@@ -30,10 +30,11 @@ type ScreenshotSelectorProps = {
   screenshotsDivRef: React.RefObject<HTMLDivElement>;
 };
 
-type ActiveButton = 1 | 2 | 3;
+export type ActiveButton = 1 | 2 | 3;
 
 function ScreenshotSelector({ screenshotsDivRef }: ScreenshotSelectorProps) {
   const [activeButton, setActiveButton] = useState<ActiveButton>(1);
+  useShowFirstScreenshot(moveToScreenshot);
 
   function moveToScreenshot(clickedButton: ActiveButton) {
     setActiveButton(clickedButton);

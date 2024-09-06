@@ -1,5 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
+import { ActiveButton } from '../components/Projects';
+
+type MoveToScreenshotFunction = (clickedButton: ActiveButton) => void;
 
 // Check if the viewport width if smaller than 768px
 export const useCheckIfMobile = () => {
@@ -79,6 +82,23 @@ export const useHeaderHeight = () => {
   }, []);
 
   return headerHeight;
+};
+
+// Go back to the first screenshot when the page is resized
+export const useShowFirstScreenshot = (
+  moveToScreenshotFunction: MoveToScreenshotFunction,
+) => {
+  useLayoutEffect(() => {
+    const moveToFirstScreenshot = () => {
+      moveToScreenshotFunction(1);
+    };
+
+    window.addEventListener('resize', moveToFirstScreenshot);
+
+    return () => {
+      window.removeEventListener('resize', moveToFirstScreenshot);
+    };
+  }, []);
 };
 
 // Close the sidebar on tap outside the sidebar
