@@ -33,11 +33,16 @@ export const StyledLanguagePicker = styled.div`
     justify-content: center;
 
     button {
-      height: 32px;
+      height: 28px;
       aspect-ratio: 1/1;
       font-size: ${(props) => props.theme.fontSizes.large};
       background: transparent;
       border: none;
+
+      svg {
+        height: 28px;
+        width: 28px;
+      }
     }
   }
 
@@ -64,6 +69,11 @@ export const StyledLanguagePicker = styled.div`
         height: 24px;
         width: 24px;
         font-size: ${(props) => props.theme.fontSizes.medium};
+
+        svg {
+          height: 24px;
+          width: 24px;
+        }
       }
     }
   }

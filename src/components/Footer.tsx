@@ -1,13 +1,18 @@
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { LOCALES, LocalesValues } from '../languages/locales';
+import { StyledIconButton } from '../styles/App.styled';
 import {
   StyledFooter,
   StyledLanguagePicker,
   StyledThemePicker,
 } from '../styles/Footer.styled';
+import {
+  PolishFlag,
+  UnitedKingdomFlag,
+  UnitedStatesFlag,
+} from '../utils/flags';
 import { getTranslation } from '../utils/helpers';
-import { LOCALES, LocalesValues } from '../languages/locales';
-import { MdLightMode, MdDarkMode } from 'react-icons/md';
-import { StyledIconButton } from '../styles/App.styled';
 import { darkTheme, lightTheme, ThemeObject } from '../utils/themes';
 
 type FooterProps = {
@@ -44,7 +49,7 @@ function LanguagePicker({ locale, setLocale }: LanguagePickerProps) {
             title={getTranslation(intl, 'footerPL')}
             onClick={() => changeLanguage(LOCALES.POLISH)}
           >
-            🇵🇱
+            <PolishFlag />
           </button>
         )}
         {locale !== LOCALES.BRITISH_ENGLISH && (
@@ -52,7 +57,7 @@ function LanguagePicker({ locale, setLocale }: LanguagePickerProps) {
             title={getTranslation(intl, 'footerBrE')}
             onClick={() => changeLanguage(LOCALES.BRITISH_ENGLISH)}
           >
-            🇬🇧
+            <UnitedKingdomFlag />
           </button>
         )}
         {locale !== LOCALES.AMERICAN_ENGLISH && (
@@ -60,7 +65,7 @@ function LanguagePicker({ locale, setLocale }: LanguagePickerProps) {
             title={getTranslation(intl, 'footerAmE')}
             onClick={() => changeLanguage(LOCALES.AMERICAN_ENGLISH)}
           >
-            🇺🇸
+            <UnitedStatesFlag />
           </button>
         )}
       </div>
