@@ -40,8 +40,8 @@ export const StyledLanguagePicker = styled.div`
       border: none;
 
       svg {
-        height: 28px;
-        width: 28px;
+        height: 100%;
+        width: 100%;
       }
     }
   }
@@ -69,11 +69,6 @@ export const StyledLanguagePicker = styled.div`
         height: 24px;
         width: 24px;
         font-size: ${(props) => props.theme.fontSizes.medium};
-
-        svg {
-          height: 24px;
-          width: 24px;
-        }
       }
     }
   }
