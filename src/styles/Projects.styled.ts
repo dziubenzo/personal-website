@@ -271,6 +271,7 @@ export const StyledProjectDescription = styled.div`
 
     .project-icons-wrapper {
       svg {
+        background: transparent;
         transition: transform 0.3s ease-in-out;
       }
     }
@@ -302,21 +303,31 @@ export const StyledProjectDescription = styled.div`
       }
     }
 
+    .project-icons-wrapper {
+      transition: transform 0.15s ease-in-out;
+
+      svg:hover {
+        transform: scale(1.2);
+        filter: contrast(200%);
+      }
+    }
+
     .project-links-wrapper {
       a {
         text-decoration: none;
+        background: transparent;
 
         p,
         svg {
           transition: all 0.15s ease-in-out;
         }
 
-        &:hover p {
-          color: ${(props) => props.theme.colours.background};
+        &:hover {
+          filter: contrast(200%);
         }
 
         &:hover svg {
-          fill: ${(props) => props.theme.colours.background};
+          transform: scale(1.15);
         }
       }
     }

@@ -36,9 +36,11 @@ export const StyledSkills = styled.section`
       }
 
       .skill-icon {
+        background: transparent;
         transition: transform 0.2s ease-in-out;
 
         &:hover {
+          filter: contrast(200%);
           transform: scale(1.2);
         }
       }

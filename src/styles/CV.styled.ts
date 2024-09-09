@@ -40,9 +40,11 @@ export const StyledCV = styled.section`
     .download-cv-wrapper {
       a {
         svg {
+          background: transparent;
           transition: transform 0.15s ease-in-out;
 
           &:hover {
+            filter: contrast(200%);
             transform: scale(1.2);
           }
         }

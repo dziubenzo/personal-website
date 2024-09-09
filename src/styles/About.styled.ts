@@ -117,10 +117,12 @@ export const StyledDevInfo = styled.div`
   @media (hover: hover) {
     .email-wrapper {
       svg {
-        transition: fill 0.15s ease-in-out;
+        background: transparent;
+        transition: transform 0.15s ease-in-out;
 
         &:hover {
-          fill: ${(props) => props.theme.colours.background};
+          transform: scale(1.1);
+          filter: contrast(200%);
         }
       }
     }
@@ -162,10 +164,12 @@ export const StyledContactLinks = styled.div<ContactLinksProps>`
   @media (hover: hover) {
     a {
       svg {
-        transition: fill 0.15s ease-in-out;
+        background: transparent;
+        transition: all 0.15s ease-in-out;
 
         &:hover {
-          fill: ${(props) => props.theme.colours.background};
+          transform: scale(1.2);
+          filter: contrast(200%);
         }
       }
     }
