@@ -229,23 +229,36 @@ export const StyledProjectDescription = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 32px;
     text-align: center;
     margin-top: auto;
+    gap: 8px;
 
-    a {
-      height: 48px;
-      width: 48px;
+    a:nth-of-type(odd) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-underline-offset: 0.2em;
+      text-decoration-color: ${(props) => props.theme.colours.secondary};
 
       svg {
-        height: 100%;
-        width: 100%;
+        height: 32px;
+        width: 32px;
+      }
+
+      p {
+        font-size: ${(props) => props.theme.fontSizes.small};
       }
     }
 
     a:nth-of-type(even) {
       height: 64px;
       width: 64px;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 
@@ -291,12 +304,19 @@ export const StyledProjectDescription = styled.div`
 
     .project-links-wrapper {
       a {
-        svg {
-          transition: fill 0.15s ease-in-out;
+        text-decoration: none;
 
-          &:hover {
-            fill: ${(props) => props.theme.colours.background};
-          }
+        p,
+        svg {
+          transition: all 0.15s ease-in-out;
+        }
+
+        &:hover p {
+          color: ${(props) => props.theme.colours.background};
+        }
+
+        &:hover svg {
+          fill: ${(props) => props.theme.colours.background};
         }
       }
     }
@@ -321,6 +341,23 @@ export const StyledProjectDescription = styled.div`
       .frontend-icons-heading,
       .backend-icons-heading {
         font-size: ${(props) => props.theme.fontSizes.extraLarge};
+      }
+    }
+
+    .project-links-wrapper {
+      gap: 48px;
+
+      a:nth-of-type(odd) {
+        gap: 8px;
+
+        p {
+          font-size: ${(props) => props.theme.fontSizes.standard};
+        }
+
+        svg {
+          height: 48px;
+          width: 48px;
+        }
       }
     }
   }
@@ -349,6 +386,10 @@ export const StyledProjectDescription = styled.div`
       .backend-icons-heading {
         font-size: ${(props) => props.theme.fontSizes.large};
       }
+    }
+
+    .project-links-wrapper {
+      gap: 16px;
     }
   }
 `;

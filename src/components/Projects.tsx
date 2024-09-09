@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { FaGithubAlt, FaPlayCircle } from 'react-icons/fa';
+import { FaPlayCircle } from 'react-icons/fa';
+import { IoIosLink } from 'react-icons/io';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
 import {
@@ -139,7 +140,10 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
           title={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
           aria-label={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
         >
-          <FaGithubAlt aria-hidden={true} />
+          <IoIosLink aria-hidden={true} />
+          <p>
+            <FormattedMessage id="projectsFrontendLink" />
+          </p>
         </a>
         <a
           href={project.demoLink}
@@ -153,7 +157,10 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
           title={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
           aria-label={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
         >
-          <FaGithubAlt aria-hidden={true} />
+          <IoIosLink aria-hidden={true} />
+          <p>
+            <FormattedMessage id="projectsBackendLink" />
+          </p>
         </a>
       </div>
     </StyledProjectDescription>
