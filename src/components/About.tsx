@@ -40,24 +40,28 @@ function ContactLinks({ size }: ContactLinksProps) {
       <a
         href="https://github.com/dziubenzo"
         aria-label={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
+        title={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
       >
         <FaGithub aria-hidden={true} />
       </a>
       <a
         href="https://www.linkedin.com/"
         aria-label={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
+        title={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
       >
         <FaLinkedin aria-hidden={true} />
       </a>
       <a
         href="https://x.com/"
         aria-label={getTranslation(intl, 'aboutContactLinkXLabel')}
+        title={getTranslation(intl, 'aboutContactLinkXLabel')}
       >
         <FaXTwitter aria-hidden={true} />
       </a>
       <a
         href="mailto:michal@dziubany.dev"
         aria-label={getTranslation(intl, 'aboutContactLinkEmailLabel')}
+        title={getTranslation(intl, 'aboutContactLinkEmailLabel')}
       >
         <MdAlternateEmail aria-hidden={true} />
       </a>
