@@ -39,6 +39,10 @@ export const StyledContactForm = styled.section`
       }
     }
 
+    input {
+      width: 32ch;
+    }
+
     label {
       width: max-content;
       align-self: center;

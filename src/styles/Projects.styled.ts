@@ -172,7 +172,7 @@ export const StyledScreenshotSelector = styled.div`
 export const StyledProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colours.tertiary};
   padding: 1em;
@@ -204,7 +204,8 @@ export const StyledProjectDescription = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
+    margin-top: auto;
 
     .frontend-icons-wrapper,
     .backend-icons-wrapper {
