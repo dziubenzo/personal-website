@@ -13,7 +13,7 @@ export const getTranslation = (
 };
 
 // Get user's preferred language from localStorage or navigator object
-// Set British English as default on first app load
+// Use British English as fallback
 export const getPreferredLang = () => {
   const htmlElement = document.querySelector<HTMLHtmlElement>('html');
   const localStorageValue = localStorage.getItem('lang');
