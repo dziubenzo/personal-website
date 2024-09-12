@@ -45,7 +45,7 @@ function ContactLinks({ size }: ContactLinksProps) {
         <FaGithub aria-hidden={true} />
       </a>
       <a
-        href="https://www.linkedin.com/"
+        href="https://www.linkedin.com/in/michal-dziubany"
         aria-label={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
         title={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
       >

@@ -23,14 +23,6 @@ export default function CV() {
         </div>
         <div className="download-cv-wrapper">
           <h1 className="download-cv-heading">
-            <FormattedMessage id="cvDownloadWord" />
-          </h1>
-          <a href={getTranslation(intl, 'cvDownloadWordLink')} download={true}>
-            <FaFileWord />
-          </a>
-        </div>
-        <div className="download-cv-wrapper">
-          <h1 className="download-cv-heading">
             <FormattedMessage id="cvImage" />
           </h1>
           <a

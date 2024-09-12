@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledCV = styled.section`
   .cv-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
     place-items: center;
     border-radius: 8px;
@@ -54,8 +54,6 @@ export const StyledCV = styled.section`
 
   @media (width < ${(props) => props.theme.mobile}) {
     .cv-wrapper {
-      justify-content: space-around;
-
       .download-cv-wrapper {
         a {
           height: 48px;
