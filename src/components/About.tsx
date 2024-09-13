@@ -113,7 +113,7 @@ function DevInfo() {
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoFrontendHeading" />
       </h3>
-      <p>JavaScript, TypeScript, React</p>
+      <p>React, TypeScript, JavaScript</p>
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoBackendHeading" />
       </h3>

@@ -1,4 +1,4 @@
-import { FaFilePdf, FaFileWord, FaRegFileImage } from 'react-icons/fa';
+import { FaFilePdf, FaRegFileImage } from 'react-icons/fa';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
 import { StyledCV } from '../styles/CV.styled';
