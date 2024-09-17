@@ -39,8 +39,8 @@ export const aurora: Project = {
     'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122136/personal_website/screenshots_mobile/xbqiyzsirzddpq8igl3q.png',
   ],
   frontendStack: [
-    skillIcons.javascript,
     skillIcons.react,
+    skillIcons.javascript,
     skillIcons.reactRouter,
     skillIcons.styledComponents,
     skillIcons.vitest,
@@ -72,8 +72,8 @@ export const talkyTalky: Project = {
     'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122141/personal_website/screenshots_mobile/txcaepaffvqwssm7s2zy.png',
   ],
   frontendStack: [
-    skillIcons.javascript,
     skillIcons.react,
+    skillIcons.javascript,
     skillIcons.reactRouter,
     skillIcons.socketIO,
     skillIcons.styledComponents,
@@ -104,8 +104,8 @@ export const whereIsWally: Project = {
     'https://res.cloudinary.com/dvhkp9wc6/image/upload/v1723122150/personal_website/screenshots_mobile/wzccutuog1bw2hrst1tv.png',
   ],
   frontendStack: [
-    skillIcons.javascript,
     skillIcons.react,
+    skillIcons.javascript,
     skillIcons.reactRouter,
     skillIcons.styledComponents,
   ],

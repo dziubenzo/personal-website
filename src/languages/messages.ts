@@ -182,7 +182,7 @@ export const messages: Languages = {
     projectsDemoLinkLabel: 'Odnośnik do serwisu ',
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
-      'Inspirowany Redditem serwis internetowy przedstawiający linki do różnorodnych treści z możliwością publikacji trzech rodzajów postów, pisania komentarzy oraz systemem głosowania na treści i komentarze.',
+      'Inspirowana Redditem aplikacja internetowa przedstawiająca linki do różnorodnych treści z możliwością publikacji trzech rodzajów postów, pisania komentarzy oraz systemem głosowania na treści i komentarze.',
     projectsTalkyTalkyName: 'Talky-Talky',
     projectsTalkyTalkyDescription:
       'Aplikacja do czatowania w czasie rzeczywistym inspirowana komunikatorem Gadu-Gadu w wersji 6, oferująca dwa rodzaje statusów, oryginalne emotikony GG, czaty grupowe i powiadomienia typu toast.',
