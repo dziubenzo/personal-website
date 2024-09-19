@@ -1,6 +1,6 @@
-# Personal Website
+# Portfolio Website
 
-This is the repo for my personal website - [dziubany.dev](https://dziubany.dev)
+This is the repo for my portfolio website - [dziubany.dev](https://dziubany.dev)
 
 It is available in **English** (British and American varieties) and in **Polish**.
 

@@ -75,7 +75,7 @@ function DevHeadings() {
         aria-label={getTranslation(intl, 'headerScrollLabel')}
       >
         <h1>Michał Dziubany</h1>
-        <h3>Fullstack Developer</h3>
+        <h3>Full Stack Developer</h3>
       </a>
     </StyledDevHeadings>
   );
