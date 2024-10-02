@@ -15,9 +15,15 @@ export default function CV() {
       <div className="cv-wrapper">
         <div className="download-cv-wrapper">
           <h1 className="download-cv-heading">
-            <FormattedMessage id="cvDownloadPDF" />
+            <FormattedMessage id="cvPDF" />
           </h1>
-          <a href={getTranslation(intl, 'cvDownloadPDFLink')} download={true}>
+          <a
+            href={getTranslation(intl, 'cvPDFLink')}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={getTranslation(intl, 'cvPDFLabel')}
+            title={getTranslation(intl, 'cvPDFLabel')}
+          >
             <FaFilePdf />
           </a>
         </div>
@@ -29,6 +35,8 @@ export default function CV() {
             href={getTranslation(intl, 'cvImageLink')}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={getTranslation(intl, 'cvImageLabel')}
+            title={getTranslation(intl, 'cvImageLabel')}
           >
             <FaRegFileImage />
           </a>
