@@ -169,26 +169,25 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
 
 function Project({ project, reverse }: ProjectProps) {
   const intl = useIntl();
-  const { screenshotsDesktop, screenshotsMobile } = project;
+  const { screenshots } = project;
 
   const screenshotsDivRef = useRef<HTMLDivElement>(null);
   const isDesktop = useCheckIfDesktop();
 
   function renderScreenshots() {
-    return screenshotsDesktop.map((screenshotDesktop, index) => {
+    return screenshots.map((screenshot, index) => {
       return (
         <a
           key={`${getTranslation(intl, project.name)} ${index + 1}`}
-          href={screenshotDesktop}
+          href={screenshot}
           target="_blank"
           aria-label={`${getTranslation(intl, 'projectsScreenshotNewTab')}`}
           title={`${getTranslation(intl, 'projectsScreenshotNewTab')}`}
         >
           <img
             key={`${getTranslation(intl, project.name)} ${index + 1}`}
-            srcSet={`${screenshotDesktop} 1329w, ${screenshotsMobile[index]} 768w`}
-            sizes="(width < 768px) 768w, 1329w"
-            src={screenshotDesktop}
+            loading="lazy"
+            src={screenshot}
             alt={`${getTranslation(intl, project.name)} - ${getTranslation(intl, 'projectsScreenshot')} ${index + 1} `}
           />
         </a>

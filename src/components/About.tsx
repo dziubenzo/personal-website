@@ -23,9 +23,7 @@ function DevPhoto() {
   return (
     <StyledDevPhoto>
       <img
-        srcSet="https://placehold.co/1000x2000 1000w, https://placehold.co/500x1000 500w, https://placehold.co/300x700 300w"
-        sizes="(width < 768px) 300px, (width < 1024px) 500px, 1000px"
-        src="https://placehold.co/1000x2000"
+        src="https://res.cloudinary.com/dvhkp9wc6/image/upload/v1727873307/personal_website/photos/bzyk9jy6kkjel3rp2gya.png"
         alt={getTranslation(intl, 'aboutDevPhotoAlt')}
       />
     </StyledDevPhoto>
