@@ -142,7 +142,7 @@ export const StyledDevInfo = styled.div`
 
 export const StyledContactLinks = styled.div<ContactLinksProps>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
   margin-top: 1em;
 

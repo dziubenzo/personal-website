@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BiCopy } from 'react-icons/bi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
 import { MdAlternateEmail } from 'react-icons/md';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
@@ -36,13 +35,6 @@ function ContactLinks({ size }: ContactLinksProps) {
   return (
     <StyledContactLinks $size={size}>
       <a
-        href="https://github.com/dziubenzo"
-        aria-label={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
-        title={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
-      >
-        <FaGithub aria-hidden={true} />
-      </a>
-      <a
         href="https://www.linkedin.com/in/michal-dziubany"
         aria-label={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
         title={getTranslation(intl, 'aboutContactLinkLinkedInLabel')}
@@ -50,11 +42,11 @@ function ContactLinks({ size }: ContactLinksProps) {
         <FaLinkedin aria-hidden={true} />
       </a>
       <a
-        href="https://x.com/"
-        aria-label={getTranslation(intl, 'aboutContactLinkXLabel')}
-        title={getTranslation(intl, 'aboutContactLinkXLabel')}
+        href="https://github.com/dziubenzo"
+        aria-label={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
+        title={getTranslation(intl, 'aboutContactLinkGitHubLabel')}
       >
-        <FaXTwitter aria-hidden={true} />
+        <FaGithub aria-hidden={true} />
       </a>
       <a
         href="mailto:michal@dziubany.dev"
