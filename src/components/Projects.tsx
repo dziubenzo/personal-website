@@ -38,23 +38,24 @@ function ScreenshotSelector({ screenshotsDivRef }: ScreenshotSelectorProps) {
   useShowFirstScreenshot(moveToScreenshot);
 
   function moveToScreenshot(clickedButton: ActiveButton) {
+    if (!screenshotsDivRef.current) return;
     setActiveButton(clickedButton);
     switch (clickedButton) {
       case 1:
-        screenshotsDivRef.current?.scrollTo({
+        screenshotsDivRef.current.scrollTo({
           left: 0,
           behavior: 'smooth',
         });
         break;
       case 2:
-        screenshotsDivRef.current?.scrollTo({
-          left: screenshotsDivRef.current?.offsetWidth,
+        screenshotsDivRef.current.scrollTo({
+          left: screenshotsDivRef.current.offsetWidth,
           behavior: 'smooth',
         });
         break;
       case 3:
-        screenshotsDivRef.current?.scrollTo({
-          left: screenshotsDivRef.current?.offsetWidth * 2,
+        screenshotsDivRef.current.scrollTo({
+          left: screenshotsDivRef.current.offsetWidth * 2,
           behavior: 'smooth',
         });
         break;

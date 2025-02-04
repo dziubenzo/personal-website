@@ -1,5 +1,5 @@
 import { useForm } from 'formbold-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BiMessageRoundedCheck, BiMessageRoundedError } from 'react-icons/bi';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { StyledHeading } from '../styles/App.styled';
@@ -27,9 +27,7 @@ function Form() {
 
   // Bring back Send button description if there is a sending error
   if (state.error.status) {
-    useEffect(() => {
-      setIsSending(false);
-    }, []);
+    if (isSending) setIsSending(false);
   }
 
   return (
