@@ -196,7 +196,7 @@ export const StyledProjectDescription = styled.div`
   .frontend-icons-heading,
   .backend-icons-heading {
     font-size: ${(props) => props.theme.fontSizes.large};
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
   }
 
   .project-icons-wrapper {
@@ -204,19 +204,20 @@ export const StyledProjectDescription = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 32px;
     margin-top: auto;
 
     .frontend-icons-wrapper,
     .backend-icons-wrapper {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 16px;
 
       svg {
-        height: 36px;
-        width: 36px;
+        height: 34px;
+        width: 34px;
       }
     }
   }
