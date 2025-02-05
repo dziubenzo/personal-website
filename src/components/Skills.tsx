@@ -63,19 +63,20 @@ function TextSkills() {
         <h3 className="category-title">Frontend</h3>
         {renderSkillsAsText('Frontend')}
       </div>
-
       <div className="category">
         <h3 className="category-title">Backend</h3>
         {renderSkillsAsText('Backend')}
       </div>
-
       <div className="category">
-        <h3 className="category-title">Testing</h3>
+        <h3 className="category-title">
+          <FormattedMessage id="skillsTextTesting" />
+        </h3>
         {renderSkillsAsText('Testing')}
       </div>
-
       <div className="category">
-        <h3 className="category-title">Other</h3>
+        <h3 className="category-title">
+          <FormattedMessage id="skillsTextOther" />
+        </h3>
         {renderSkillsAsText('Other')}
       </div>
     </StyledTextSkills>
@@ -83,7 +84,14 @@ function TextSkills() {
 }
 
 export default function Skills() {
-  const [showText, setShowText] = useState(true);
+  const [showText, setShowText] = useState(() => {
+    const localStorageValue = localStorage.getItem('showText');
+    if (localStorageValue === 'true' || localStorageValue === 'false') {
+      return localStorageValue === 'true';
+    } else {
+      return false;
+    }
+  });
 
   return (
     <StyledSkills id="skills">
@@ -99,7 +107,13 @@ export default function Skills() {
             type="checkbox"
             id="skills-selector"
             defaultChecked={showText}
-            onChange={(event) => setShowText(event.target.checked)}
+            onChange={(event) => {
+              setShowText(event.target.checked);
+              localStorage.setItem(
+                'showText',
+                event.target.checked ? 'true' : 'false',
+              );
+            }}
           />
         </StyledSkillsSelector>
         {showText ? <TextSkills /> : <SkillsCarousel />}
