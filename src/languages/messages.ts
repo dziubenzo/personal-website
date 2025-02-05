@@ -37,6 +37,7 @@ const defaultLanguage = {
   aboutDevInfoShortInfo:
     'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
   skillsSkills: 'Skills',
+  skillsSelectorLabel: 'Text Version?',
   projectsProjects: 'Projects',
   projectsScreenshot: 'Screenshot',
   projectsScreenshotNewTab: 'Open screenshot in new tab',
@@ -107,6 +108,7 @@ export const messages: Languages = {
     aboutDevInfoShortInfo:
       'Always eager to learn and contribute to the IT landscape. A former Polish-English translator.',
     skillsSkills: 'Skills',
+    skillsSelectorLabel: 'Text Version?',
     projectsProjects: 'Projects',
     projectsScreenshot: 'Screenshot',
     projectsScreenshotNewTab: 'Open screenshot in new tab',
@@ -174,6 +176,7 @@ export const messages: Languages = {
     aboutDevInfoShortInfo:
       'Zawsze głodny wiedzy i pragnie dodać coś od siebie do świata IT. Z wykształcenia i z zawodu tłumacz jęz. angielskiego.',
     skillsSkills: 'Umiejętności',
+    skillsSelectorLabel: 'Forma tekstowa?',
     projectsProjects: 'Projekty',
     projectsScreenshot: 'Zrzut ekranu',
     projectsScreenshotNewTab: 'Otwórz zrzut ekranu w nowej karcie',

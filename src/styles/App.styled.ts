@@ -37,6 +37,10 @@ export const StyledMainContainer = styled.main`
     gap: 32px;
   }
 
+  section[id='skills'] {
+    gap: 8px;
+  }
+
   @media (width < ${(props) => props.theme.mobile}) {
     gap: 16px;
 
