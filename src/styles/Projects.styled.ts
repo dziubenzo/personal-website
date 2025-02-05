@@ -78,7 +78,7 @@ export const StyledProject = styled.div`
     }
 
     .screenshots-wrapper {
-      border: 5em solid ${(props) => props.theme.colours.tertiary};
+      border: 5em solid ${(props) => props.theme.colours.background};
 
       .horizontal-scroll-wrapper {
         border-radius: revert;
@@ -172,7 +172,7 @@ export const StyledScreenshotSelector = styled.div`
 export const StyledProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colours.tertiary};
   padding: 1em;
@@ -182,8 +182,8 @@ export const StyledProjectDescription = styled.div`
   }
 
   .project-title,
-  .frontend-icons-heading,
-  .backend-icons-heading {
+  .frontend-skills-heading,
+  .backend-skills-heading {
     font-family: ${(props) => props.theme.fonts.secondary};
     letter-spacing: 2px;
     text-align: center;
@@ -193,38 +193,40 @@ export const StyledProjectDescription = styled.div`
     font-size: 2.5em;
   }
 
-  .frontend-icons-heading,
-  .backend-icons-heading {
+  .frontend-skills-heading,
+  .backend-skills-heading {
     font-size: ${(props) => props.theme.fontSizes.large};
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
   }
 
-  .project-icons-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    margin-top: auto;
+  .project-skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 
-    .frontend-icons-wrapper,
-    .backend-icons-wrapper {
+    .frontend-skills-wrapper,
+    .backend-skills-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
 
-      svg {
-        height: 34px;
-        width: 34px;
+      .project-skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-width: 100%;
+        background-color: ${(props) => props.theme.colours.primary};
+        border-radius: 8px;
+        padding: 0.1em;
+
+        span {
+          font-size: ${(props) => props.theme.fontSizes.small};
+          color: ${(props) => props.theme.colours.background};
+        }
       }
     }
-  }
-
-  hr {
-    border: 1px solid ${(props) => props.theme.colours.primary};
-    margin-top: auto;
   }
 
   .project-links-wrapper {
@@ -271,46 +273,13 @@ export const StyledProjectDescription = styled.div`
       box-shadow: ${(props) => props.theme.boxShadowTile};
     }
 
-    .project-icons-wrapper {
-      svg {
-        background: transparent;
-        transition: transform 0.3s ease-in-out;
-      }
-    }
+    .project-skills-wrapper {
+      .project-skill {
+        transition: background-color 0.15s ease-in-out;
 
-    .backend-icons-wrapper {
-      svg:nth-of-type(odd) {
-        transform: translateY(-5px);
-      }
-
-      svg:nth-of-type(even) {
-        transform: translateY(5px);
-      }
-    }
-
-    .frontend-icons-wrapper {
-      svg:nth-of-type(odd) {
-        transform: translateY(5px);
-      }
-
-      svg:nth-of-type(even) {
-        transform: translateY(-5px);
-      }
-    }
-
-    .frontend-icons:hover,
-    .backend-icons:hover {
-      svg {
-        transform: translateY(0px);
-      }
-    }
-
-    .project-icons-wrapper {
-      transition: transform 0.15s ease-in-out;
-
-      svg:hover {
-        transform: scale(1.2);
-        filter: contrast(200%);
+        &:hover {
+          background-color: ${(props) => props.theme.colours.secondary};
+        }
       }
     }
 
@@ -347,18 +316,30 @@ export const StyledProjectDescription = styled.div`
       text-align: center;
     }
 
-    .project-icons-wrapper {
-      flex-direction: revert;
-      gap: 128px;
+    .project-skills-wrapper {
+      gap: 64px;
 
-      .frontend-icons-heading,
-      .backend-icons-heading {
+      .frontend-skills-heading,
+      .backend-skills-heading {
         font-size: ${(props) => props.theme.fontSizes.extraLarge};
+      }
+
+      .frontend-skills-wrapper,
+      .backend-skills-wrapper {
+        gap: 16px;
+
+        .project-skill {
+          padding: 0.5em;
+
+          span {
+            font-size: ${(props) => props.theme.fontSizes.standard};
+          }
+        }
       }
     }
 
     .project-links-wrapper {
-      gap: 48px;
+      gap: 64px;
 
       a:nth-of-type(odd) {
         gap: 8px;
@@ -376,8 +357,6 @@ export const StyledProjectDescription = styled.div`
   }
 
   @media (width < ${(props) => props.theme.mobile}) {
-    gap: 16px;
-
     .project-title {
       font-size: 3.5em;
     }
@@ -386,23 +365,20 @@ export const StyledProjectDescription = styled.div`
       text-align: center;
     }
 
-    .project-icons-wrapper {
-      flex-direction: column;
-      gap: 32px;
+    .project-skills-wrapper {
+      gap: 16px;
 
-      .frontend-icons-wrapper,
-      .backend-icons-wrapper {
-        flex-wrap: wrap;
-      }
-
-      .frontend-icons-heading,
-      .backend-icons-heading {
+      .frontend-skills-heading,
+      .backend-skills-heading {
         font-size: ${(props) => props.theme.fontSizes.large};
       }
-    }
 
-    .project-links-wrapper {
-      gap: 16px;
+      .frontend-skills-wrapper,
+      .backend-skills-wrapper {
+        .project-skill {
+          padding: 0.3em;
+        }
+      }
     }
   }
 `;

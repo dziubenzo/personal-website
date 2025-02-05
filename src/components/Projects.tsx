@@ -95,17 +95,13 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
   const intl = useIntl();
   const { frontendStack, backendStack } = project;
 
-  function renderIcons(stackIcons: SkillIcon[]) {
+  function renderStack(stackIcons: SkillIcon[]) {
     return stackIcons.map((icon) => {
-      const Icon = icon.icon;
       const iconDescription = icon.description;
       return (
-        <Icon
-          className="skill-icon"
-          key={iconDescription}
-          title={iconDescription}
-          aria-label={iconDescription}
-        />
+        <div key={iconDescription} className="project-skill">
+          <span>{iconDescription}</span>
+        </div>
       );
     });
   }
@@ -118,23 +114,22 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
       <p className="project-description">
         <FormattedMessage id={project.description} />
       </p>
-      <div className="project-icons-wrapper">
-        <div className="frontend-icons">
-          <h3 className="frontend-icons-heading">Frontend</h3>
-          <div className="frontend-icons-wrapper">
-            {renderIcons(frontendStack)}
+      <div className="project-skills-wrapper">
+        <div className="frontend-skills">
+          <h3 className="frontend-skills-heading">Frontend</h3>
+          <div className="frontend-skills-wrapper">
+            {renderStack(frontendStack)}
           </div>
         </div>
         {backendStack && (
-          <div className="backend-icons">
-            <h3 className="backend-icons-heading">Backend</h3>
-            <div className="backend-icons-wrapper">
-              {renderIcons(backendStack)}
+          <div className="backend-skills">
+            <h3 className="backend-skills-heading">Backend</h3>
+            <div className="backend-skills-wrapper">
+              {renderStack(backendStack)}
             </div>
           </div>
         )}
       </div>
-      <hr />
       <div className="project-links-wrapper">
         <a
           href={project.frontendGitHubLink}
