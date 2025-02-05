@@ -19,13 +19,13 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     }
 
     @supports (scrollbar-width: auto) {
-      scrollbar-color: ${(props) => props.theme.colours.secondary} ${(props) => props.theme.colours.background};
-      scrollbar-width: auto;
+      scrollbar-color: ${(props) => props.theme.colours.tertiary} ${(props) => props.theme.colours.background};
+      scrollbar-width: thin;
     }
 
     @supports selector(::-webkit-scrollbar) {
       &::-webkit-scrollbar-thumb {
-        background: ${(props) => props.theme.colours.secondary}
+        background: ${(props) => props.theme.colours.tertiary}
       }
 
       &::-webkit-scrollbar-track {
