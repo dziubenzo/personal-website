@@ -153,6 +153,12 @@ export const StyledTextSkills = styled.div`
     .category {
       align-items: center;
       text-align: center;
+
+      .skill {
+        svg {
+          display: none;
+        }
+      }
     }
   }
 

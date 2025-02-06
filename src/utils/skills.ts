@@ -1,4 +1,5 @@
 import { IconType } from 'react-icons';
+import { BiLogoVisualStudio } from 'react-icons/bi';
 import {
   SiCloudinary,
   SiCss3,
@@ -23,8 +24,8 @@ import {
   SiSass,
   SiSocketdotio,
   SiStyledcomponents,
+  SiTestinglibrary,
   SiTypescript,
-  SiVisualstudiocode,
   SiVite,
   SiVitest,
 } from 'react-icons/si';
@@ -76,6 +77,11 @@ export const skillIcons = {
     description: 'React Router',
     category: 'Frontend',
   },
+  reactTestingLibrary: {
+    icon: SiTestinglibrary,
+    description: 'React Testing Library',
+    category: 'Testing',
+  },
   typescript: {
     icon: SiTypescript,
     description: 'TypeScript',
@@ -93,7 +99,7 @@ export const skillIcons = {
     category: 'Frontend',
   },
   vsCode: {
-    icon: SiVisualstudiocode,
+    icon: BiLogoVisualStudio,
     description: 'VS Code',
     category: 'Other',
   },

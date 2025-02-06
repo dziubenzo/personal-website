@@ -195,7 +195,7 @@ export const StyledProjectDescription = styled.div`
 
   .frontend-skills-heading,
   .backend-skills-heading {
-    font-size: ${(props) => props.theme.fontSizes.large};
+    font-size: ${(props) => props.theme.fontSizes.medium};
     margin-bottom: 0.5em;
   }
 
