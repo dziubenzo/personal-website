@@ -14,6 +14,7 @@ import { getTranslation } from '../utils/helpers';
 import { useCheckIfDesktop, useShowFirstScreenshot } from '../utils/hooks';
 import {
   aurora,
+  guesseye,
   talkyTalky,
   whereIsWally,
   type Project,
@@ -130,35 +131,57 @@ function ProjectDescription({ project }: ProjectDescriptionProps) {
           </div>
         )}
       </div>
-      <div className="project-links-wrapper">
-        <a
-          href={project.frontendGitHubLink}
-          title={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
-          aria-label={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
-        >
-          <IoIosLink aria-hidden={true} />
-          <p>
-            <FormattedMessage id="projectsFrontendLink" />
-          </p>
-        </a>
-        <a
-          href={project.demoLink}
-          title={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
-          aria-label={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
-        >
-          <FaPlayCircle aria-hidden={true} />
-        </a>
-        <a
-          href={project.backendGitHubLink}
-          title={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
-          aria-label={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
-        >
-          <IoIosLink aria-hidden={true} />
-          <p>
-            <FormattedMessage id="projectsBackendLink" />
-          </p>
-        </a>
-      </div>
+      {!project.backendGitHubLink ? (
+        <div className="project-links-wrapper single-repo">
+          <a
+            href={project.frontendGitHubLink}
+            title={`${getTranslation(intl, 'projectsLabel')}${getTranslation(intl, project.name)}`}
+            aria-label={`${getTranslation(intl, 'projectsLabel')}${getTranslation(intl, project.name)}`}
+          >
+            <IoIosLink aria-hidden={true} />
+            <p>
+              <FormattedMessage id="projectsLink" />
+            </p>
+          </a>
+          <a
+            href={project.demoLink}
+            title={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
+            aria-label={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
+          >
+            <FaPlayCircle aria-hidden={true} />
+          </a>
+        </div>
+      ) : (
+        <div className="project-links-wrapper">
+          <a
+            href={project.frontendGitHubLink}
+            title={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
+            aria-label={`${getTranslation(intl, 'projectsFrontendLinkLabel')}${getTranslation(intl, project.name)}`}
+          >
+            <IoIosLink aria-hidden={true} />
+            <p>
+              <FormattedMessage id="projectsFrontendLink" />
+            </p>
+          </a>
+          <a
+            href={project.demoLink}
+            title={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
+            aria-label={`${getTranslation(intl, 'projectsDemoLinkLabel')}${getTranslation(intl, project.name)}`}
+          >
+            <FaPlayCircle aria-hidden={true} />
+          </a>
+          <a
+            href={project.backendGitHubLink}
+            title={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
+            aria-label={`${getTranslation(intl, 'projectsBackendLinkLabel')}${getTranslation(intl, project.name)}`}
+          >
+            <IoIosLink aria-hidden={true} />
+            <p>
+              <FormattedMessage id="projectsBackendLink" />
+            </p>
+          </a>
+        </div>
+      )}
     </StyledProjectDescription>
   );
 }
@@ -230,6 +253,7 @@ export default function Projects() {
         <FormattedMessage id="projectsProjects" />
       </StyledHeading>
       <div className="projects-wrapper">
+        <Project project={guesseye} reverse />
         <Project project={aurora} />
         <Project project={talkyTalky} reverse />
         <Project project={whereIsWally} />

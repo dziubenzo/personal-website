@@ -266,6 +266,21 @@ export const StyledProjectDescription = styled.div`
     }
   }
 
+  .single-repo {
+    gap: 0px;
+    justify-content: space-around;
+
+    a:nth-of-type(even) {
+      height: 48px;
+      width: 48px;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
   @media (hover: hover) {
     transition: box-shadow 0.3s ease-in-out;
 

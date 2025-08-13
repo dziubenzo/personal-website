@@ -1,11 +1,13 @@
 import { SkillIcon, skillIcons } from './skills';
 
 type ProjectNames =
+  | 'projectsGuessEyeName'
   | 'projectsAuroraName'
   | 'projectsTalkyTalkyName'
   | 'projectsWhereIsWallyName';
 
 type ProjectDescriptions =
+  | 'projectsGuessEyeDescription'
   | 'projectsAuroraDescription'
   | 'projectsTalkyTalkyDescription'
   | 'projectsWhereIsWallyDescription';
@@ -19,6 +21,28 @@ export type Project = {
   screenshots: [string, string, string];
   frontendStack: SkillIcon[];
   backendStack?: SkillIcon[];
+};
+
+export const guesseye: Project = {
+  name: 'projectsGuessEyeName',
+  description: 'projectsGuessEyeDescription',
+  frontendGitHubLink: 'https://github.com/dziubenzo/guesseye',
+  demoLink: 'https://www.guesseye.com/',
+  screenshots: ['./guesseye/1.png', './guesseye/2.png', './guesseye/3.png'],
+  frontendStack: [
+    skillIcons.nextJS,
+    skillIcons.typescript,
+    skillIcons.tailwind,
+    skillIcons.shadcnui,
+  ],
+  backendStack: [
+    skillIcons.nextJS,
+    skillIcons.typescript,
+    skillIcons.postgresql,
+    skillIcons.drizzle,
+    skillIcons.puppeteer,
+    skillIcons.zod,
+  ],
 };
 
 export const aurora: Project = {

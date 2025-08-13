@@ -41,6 +41,7 @@ export const StyledContactForm = styled.section`
 
     input {
       width: 32ch;
+      text-align: center;
     }
 
     label {
