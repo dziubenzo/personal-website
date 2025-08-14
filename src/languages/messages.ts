@@ -207,7 +207,7 @@ export const messages: Languages = {
       'Gra przeglądarkowa, w której zadaniem użytkownika jest odgadnięcie właściwego zawodnika grającego w darta, oferująca statystyki dotyczące rozegranych gier i darterów w bazie danych, dwa tryby rozgrywki oraz tablicę wyników.',
     projectsAuroraName: 'Aurora',
     projectsAuroraDescription:
-      'Inspirowana Redditem aplikacja internetowa przedstawiająca linki do różnorodnych treści z możliwością publikacji trzech rodzajów postów, pisania komentarzy oraz systemem głosowania na treści i komentarze.',
+      'Inspirowana Redditem aplikacja internetowa prezentująca różnorodne treści z możliwością publikacji trzech rodzajów postów, pisania komentarzy oraz systemem głosowania na treści i komentarze.',
     projectsTalkyTalkyName: 'Talky-Talky',
     projectsTalkyTalkyDescription:
       'Aplikacja do czatowania w czasie rzeczywistym inspirowana komunikatorem Gadu-Gadu w wersji 6, oferująca dwa rodzaje statusów, oryginalne emotikony GG, czaty grupowe i powiadomienia typu toast.',
