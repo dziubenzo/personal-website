@@ -103,11 +103,11 @@ function DevInfo() {
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoFrontendHeading" />
       </h3>
-      <p>React, TypeScript, JavaScript</p>
+      <p>React, Next.js, TypeScript, JavaScript</p>
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoBackendHeading" />
       </h3>
-      <p>Node.js, Express, MongoDB</p>
+      <p>Node.js, Express, PostgreSQL, MongoDB</p>
       <h3 className="about-heading">
         <FormattedMessage id="aboutDevInfoShortInfoHeading" />
       </h3>
